@@ -1,0 +1,4 @@
+#Wed Jun 09 16:26:56 BRT 2021
+base.0=/Users/suemyinagaki/c4c/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
