@@ -58,13 +58,13 @@ class _MyLoginPage extends State<MyLoginPage> {
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                       border: UnderlineInputBorder(),
-                      labelText: 'Telefone',
+                      labelText: 'Phone',
                     ),
                     controller: telController,
                     validator: (value) {
                       if (value != null) {
                         if (value.isEmpty) {
-                          return "Telefone obrigatório";
+                          return "Phone required";
                         }
                       }
                       return null;
@@ -77,13 +77,13 @@ class _MyLoginPage extends State<MyLoginPage> {
                     obscureText: true,
                     decoration: InputDecoration(
                       border: UnderlineInputBorder(),
-                      labelText: 'Senha',
+                      labelText: 'Password',
                     ),
                     controller: passwordController,
                     validator: (value) {
                       if (value != null) {
                         if (value.isEmpty) {
-                          return "Senha obrigatória";
+                          return "Password required";
                         }
                       }
                       return null;
@@ -101,7 +101,7 @@ class _MyLoginPage extends State<MyLoginPage> {
                       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                       onPressed: () {},
                       child: Text(
-                        "Esqueci minha senha",
+                        "Forgot my password",
                         style: TextStyle(
                           decoration: TextDecoration.underline,
                           color: Colors.grey,
@@ -151,7 +151,7 @@ class _MyLoginPage extends State<MyLoginPage> {
                         );
                       },
                       child: Text(
-                        "Cadastrar",
+                        "Register",
                         textAlign: TextAlign.center,
                         // style: TextStyle(color: Colors.white),
                       ),

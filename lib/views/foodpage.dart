@@ -39,7 +39,7 @@ class _FoodPage extends State<FoodPage> {
         children: <Widget>[
           Container(
             padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-            height: 360,
+            // height: 360,
             alignment: Alignment.center,
             decoration: new BoxDecoration(
               gradient: LinearGradient(
@@ -49,8 +49,8 @@ class _FoodPage extends State<FoodPage> {
               ),
             ),
             child: Container(
-              width: double.infinity,
-              height: 350.0,
+              // width: double.infinity,
+              // height: 350.0,
               child: Center(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -70,93 +70,100 @@ class _FoodPage extends State<FoodPage> {
               ),
             ),
           ),
+          SizedBox(
+            height: 20,
+          ),
           Card(
-              margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
-              clipBehavior: Clip.antiAlias,
-              color: Colors.white,
-              elevation: 8.0,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 22.0),
-                child: Column(
-                  children: [
-                    Text(
-                      date,
-                      style: TextStyle(
-                          color: Colors.green,
-                          fontSize: 22.0,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(height: 10.0),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Column(
-                            children: [
-                              Text(
-                                "Type",
-                                style: TextStyle(
-                                    color: Colors.green,
-                                    fontSize: 22.0,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(height: 10.0),
-                              Text(
-                                _foodData["type"],
-                                style: TextStyle(
-                                    color: Colors.lightGreen,
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                            ],
-                          ),
+            margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
+            clipBehavior: Clip.antiAlias,
+            color: Colors.white,
+            elevation: 8.0,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 22.0),
+              child: Column(
+                children: [
+                  Text(
+                    date,
+                    style: TextStyle(
+                        color: Colors.green,
+                        fontSize: 22.0,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: 10.0),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          children: [
+                            Text(
+                              "Type",
+                              style: TextStyle(
+                                  color: Colors.green,
+                                  fontSize: 22.0,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 10.0),
+                            Text(
+                              _foodData["type"],
+                              style: TextStyle(
+                                  color: Colors.lightGreen,
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ],
                         ),
-                        Expanded(
-                          child: Column(
-                            children: [
-                              Text(
-                                "Food",
-                                style: TextStyle(
-                                    color: Colors.green,
-                                    fontSize: 22.0,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(height: 10.0),
-                              Text(
-                                _foodData["food"],
-                                style: TextStyle(
-                                    color: Colors.lightGreen,
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                            ],
-                          ),
+                      ),
+                      Expanded(
+                        child: Column(
+                          children: [
+                            Text(
+                              "Food",
+                              style: TextStyle(
+                                  color: Colors.green,
+                                  fontSize: 22.0,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 10.0),
+                            Text(
+                              _foodData["food"],
+                              style: TextStyle(
+                                  color: Colors.lightGreen,
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ],
                         ),
-                        Expanded(
-                          child: Column(
-                            children: [
-                              Text(
-                                "Finality",
-                                style: TextStyle(
-                                    color: Colors.green,
-                                    fontSize: 22.0,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(height: 10.0),
-                              Text(
-                                _foodData["finality"],
-                                style: TextStyle(
-                                    color: Colors.lightGreen,
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                            ],
-                          ),
+                      ),
+                      Expanded(
+                        child: Column(
+                          children: [
+                            Text(
+                              "Finality",
+                              style: TextStyle(
+                                  color: Colors.green,
+                                  fontSize: 22.0,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 10.0),
+                            Text(
+                              _foodData["finality"],
+                              style: TextStyle(
+                                  color: Colors.lightGreen,
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  ],
-                ),
-              )),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
           Container(
             child: Center(
               child: Column(
@@ -219,6 +226,9 @@ class _FoodPage extends State<FoodPage> {
                         //),
                       ],
                     ),
+                  ),
+                  SizedBox(
+                    height: 20,
                   ),
                   Container(
                     padding:

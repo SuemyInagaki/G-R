@@ -170,7 +170,7 @@ class _FoodsState extends State<Foods> {
     return Card(
       child: ListTile(
         //title: Text("oi"),
-        leading: _defineIcon(_foodList[index]["finality"]),
+        //leading: _defineIcon(_foodList[index]["finality"]),
         title: Text(_foodList[index]["food"]),
         subtitle: Text(_foodList[index]["food"]),
         //trailing: Text(_foodList[index]["distance"]),

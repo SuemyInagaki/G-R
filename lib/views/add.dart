@@ -52,9 +52,36 @@ class _MyAddPage extends State<MyAddPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Container(
-                  //padding: EdgeInsets.only(left: 30.0, right: 30.0, top: 50.0),
-                  child: Image.asset("images/logo.jpeg", scale: 5),
+                SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 30),
+                    ),
+                    Container(
+                      width: 300,
+                      height: 200,
+                      color: Colors.grey,
+                      //padding: EdgeInsets.only(left: 30.0, right: 30.0, top: 50.0),
+                      //child: Image.asset("images/potato.jpeg", scale: 7),
+                    ),
+                    Column(
+                      children: [
+                        IconButton(
+                          icon: Icon(Icons.local_see),
+                          onPressed: () {},
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.collections),
+                          onPressed: () {},
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
                 Padding(
                   padding: EdgeInsets.all(8.0),

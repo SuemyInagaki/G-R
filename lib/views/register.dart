@@ -69,7 +69,7 @@ class _MyRegister extends State<MyRegister> {
               children: <Widget>[
                 Container(
                   //padding: EdgeInsets.only(left: 30.0, right: 30.0, top: 50.0),
-                  child: Image.asset("images/c4c.jpeg", scale: 1),
+                  child: Image.asset("images/logo.jpeg", scale: 1),
                 ),
                 Padding(
                   padding: EdgeInsets.all(8.0),
@@ -81,16 +81,16 @@ class _MyRegister extends State<MyRegister> {
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       border: UnderlineInputBorder(),
-                      labelText: 'Nome',
+                      labelText: 'Name',
                       //fillColor: Colors.grey[350],
                       //filled: true,
                     ),
                     controller: nameController,
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "Nome obrigatório";
+                        return "Name required";
                       } else if (value.trim().length < 5) {
-                        return "Nome muito pequeno";
+                        return "Min. 5 characters";
                       }
                       return null;
                     },
@@ -103,14 +103,14 @@ class _MyRegister extends State<MyRegister> {
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                       border: UnderlineInputBorder(),
-                      labelText: 'Telefone',
+                      labelText: 'Phone',
                       //fillColor: Colors.grey[350],
                       //filled: true,
                     ),
                     controller: telController,
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "Telefone obrigatório";
+                        return "Phone required";
                       }
                       // else if (!EmailValidator.validate(value)) {
                       //   return "Email inválido";
@@ -126,7 +126,7 @@ class _MyRegister extends State<MyRegister> {
                     obscureText: true,
                     decoration: InputDecoration(
                       border: UnderlineInputBorder(),
-                      labelText: 'Senha',
+                      labelText: 'Password',
                       //fillColor: Colors.grey[350],
                       //filled: true,
                     ),
@@ -134,7 +134,7 @@ class _MyRegister extends State<MyRegister> {
                     validator: (value) {
                       if (value != null) _senha = value;
                       if (value!.isEmpty) {
-                        return "Senha obrigatória";
+                        return "Password required";
                       }
                       return null;
                     },
@@ -147,16 +147,16 @@ class _MyRegister extends State<MyRegister> {
                     obscureText: true,
                     decoration: InputDecoration(
                       border: UnderlineInputBorder(),
-                      labelText: 'Confirmar senha',
+                      labelText: 'Confirm password',
                       //fillColor: Colors.grey[350],
                       //filled: true,
                     ),
                     controller: passwordController2,
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "Senha obrigatória";
+                        return "Password required";
                       } else if (_senha != value) {
-                        return "Senhas não coincidem";
+                        return "Passwords do not match";
                       }
                       return null;
                     },
@@ -169,7 +169,7 @@ class _MyRegister extends State<MyRegister> {
                     //obscureText: true,
                     decoration: InputDecoration(
                       border: UnderlineInputBorder(),
-                      labelText: 'Endereço',
+                      labelText: 'Address',
                       //fillColor: Colors.grey[350],
                       //filled: true,
                     ),
@@ -177,7 +177,7 @@ class _MyRegister extends State<MyRegister> {
                     validator: (value) {
                       if (value != null) _senha = value;
                       if (value!.isEmpty) {
-                        return "Endereço obrigatório";
+                        return "Address required";
                       }
                       return null;
                     },
@@ -189,14 +189,14 @@ class _MyRegister extends State<MyRegister> {
                     elevation: 8.0,
                     borderRadius: BorderRadius.circular(8.0),
                     //color: Color(0xff01A0C7),
-                    color: Colors.brown,
+                    color: Colors.green,
                     child: MaterialButton(
                       minWidth: MediaQuery.of(context).size.width,
                       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           final snack = SnackBar(
-                            content: Text("Usuário cadastrado com sucesso!"),
+                            content: Text("Registration success!"),
                             action: SnackBarAction(
                                 label: "",
                                 textColor: Colors.white,
@@ -214,7 +214,7 @@ class _MyRegister extends State<MyRegister> {
                         }
                       },
                       child: Text(
-                        "Cadastrar",
+                        "Register",
                         textAlign: TextAlign.center,
                       ),
                     ),
