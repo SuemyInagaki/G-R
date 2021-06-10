@@ -31,6 +31,7 @@ dependencies:
   http: ^0.12.2
   flutter_ibm_watson: ^0.0.4
   couchdb: ^0.7.0
+  charts_flutter: ^0.10.0
   
   
   
@@ -57,6 +58,10 @@ flutter:
     - images/logo.jpeg
     - images/background.jpeg
     - images/potato.jpeg
+    - images/logo.png
+    - images/img1.png
+    - images/img2.png
+    - images/img3.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

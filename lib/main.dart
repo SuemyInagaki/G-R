@@ -4,7 +4,6 @@ import 'package:c4c/views/login.dart';
 import 'package:c4c/views/home.dart';
 //import 'package:c4c/colors.dart';
 import 'package:c4c/views/add.dart';
-import 'package:c4c/views/statistics.dart';
 import 'package:c4c/views/register.dart';
 import 'package:c4c/views/data.dart';
 import 'package:c4c/views/available.dart';

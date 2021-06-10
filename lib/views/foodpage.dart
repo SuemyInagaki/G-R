@@ -85,7 +85,7 @@ class _FoodPage extends State<FoodPage> {
                   Text(
                     date,
                     style: TextStyle(
-                        color: Colors.green,
+                        color: Colors.green[900],
                         fontSize: 22.0,
                         fontWeight: FontWeight.bold),
                   ),
@@ -98,7 +98,7 @@ class _FoodPage extends State<FoodPage> {
                             Text(
                               "Type",
                               style: TextStyle(
-                                  color: Colors.green,
+                                  color: Colors.green[900],
                                   fontSize: 22.0,
                                   fontWeight: FontWeight.bold),
                             ),
@@ -106,7 +106,7 @@ class _FoodPage extends State<FoodPage> {
                             Text(
                               _foodData["type"],
                               style: TextStyle(
-                                  color: Colors.lightGreen,
+                                  color: Colors.green[700],
                                   fontSize: 20.0,
                                   fontWeight: FontWeight.w400),
                             ),
@@ -119,7 +119,7 @@ class _FoodPage extends State<FoodPage> {
                             Text(
                               "Food",
                               style: TextStyle(
-                                  color: Colors.green,
+                                  color: Colors.green[900],
                                   fontSize: 22.0,
                                   fontWeight: FontWeight.bold),
                             ),
@@ -127,7 +127,7 @@ class _FoodPage extends State<FoodPage> {
                             Text(
                               _foodData["food"],
                               style: TextStyle(
-                                  color: Colors.lightGreen,
+                                  color: Colors.green[700],
                                   fontSize: 20.0,
                                   fontWeight: FontWeight.w400),
                             ),
@@ -140,7 +140,7 @@ class _FoodPage extends State<FoodPage> {
                             Text(
                               "Finality",
                               style: TextStyle(
-                                  color: Colors.green,
+                                  color: Colors.green[900],
                                   fontSize: 22.0,
                                   fontWeight: FontWeight.bold),
                             ),
@@ -148,7 +148,7 @@ class _FoodPage extends State<FoodPage> {
                             Text(
                               _foodData["finality"],
                               style: TextStyle(
-                                  color: Colors.lightGreen,
+                                  color: Colors.green[700],
                                   fontSize: 20.0,
                                   fontWeight: FontWeight.w400),
                             ),
