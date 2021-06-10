@@ -1,4 +1,6 @@
-# c4c
+# Give and Receive
+
+Run this app using the command: flutter run --no-sound-null-safety
 
 A new Flutter project.
 
