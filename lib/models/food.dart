@@ -7,6 +7,7 @@ class Food {
   final String finality;
   final User donor;
   final int quantity;
+  final String date;
 
   const Food({
     required this.id,
@@ -15,5 +16,6 @@ class Food {
     required this.finality,
     required this.donor,
     required this.quantity,
+    required this.date,
   });
 }

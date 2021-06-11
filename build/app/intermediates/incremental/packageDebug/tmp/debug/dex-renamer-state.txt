@@ -1,4 +1,4 @@
-#Thu Jun 10 15:20:44 BRT 2021
+#Fri Jun 11 15:16:24 BRT 2021
 base.0=/Users/suemyinagaki/Documents/GitHub/G-R/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

@@ -24,6 +24,7 @@ const DUMMY_FOODS = {
       password: '123@abc',
     ),
     quantity: 4,
+    date: "2021-04-09",
   ),
   '2': const Food(
     id: '2',
@@ -45,7 +46,8 @@ const DUMMY_FOODS = {
       ),
       password: 'abcde',
     ),
-    quantity: 1,
+    quantity: 2,
+    date: "2021-04-10",
   ),
   '3': const Food(
     id: '3',
@@ -68,6 +70,7 @@ const DUMMY_FOODS = {
       password: 'abcde',
     ),
     quantity: 10,
+    date: "2021-04-25",
   ),
   '4': const Food(
     id: '4',
@@ -90,6 +93,7 @@ const DUMMY_FOODS = {
       password: '123@abc',
     ),
     quantity: 7,
+    date: "2021-04-26",
   ),
   '5': const Food(
     id: '5',
@@ -112,6 +116,7 @@ const DUMMY_FOODS = {
       password: '123@abc',
     ),
     quantity: 3,
+    date: "2021-04-12",
   ),
   '6': const Food(
     id: '6',
@@ -134,6 +139,7 @@ const DUMMY_FOODS = {
       password: '123@abc',
     ),
     quantity: 3,
+    date: "2021-04-19",
   ),
   '7': const Food(
     id: '7',
@@ -156,6 +162,7 @@ const DUMMY_FOODS = {
       password: '123@abc',
     ),
     quantity: 6,
+    date: "2021-04-21",
   ),
   '8': const Food(
     id: '8',
@@ -178,6 +185,7 @@ const DUMMY_FOODS = {
       password: '123@abc',
     ),
     quantity: 5,
+    date: "2021-04-23",
   ),
   '9': const Food(
     id: '9',
@@ -200,6 +208,7 @@ const DUMMY_FOODS = {
       password: '123@abc',
     ),
     quantity: 11,
+    date: "2021-04-27",
   ),
   '10': const Food(
     id: '10',
@@ -222,6 +231,7 @@ const DUMMY_FOODS = {
       password: '123@abc',
     ),
     quantity: 8,
+    date: "2021-04-07",
   ),
   '11': const Food(
     id: '11',
@@ -244,6 +254,7 @@ const DUMMY_FOODS = {
       password: '123@abc',
     ),
     quantity: 13,
+    date: "2021-04-30",
   ),
   '12': const Food(
     id: '12',
@@ -266,6 +277,7 @@ const DUMMY_FOODS = {
       password: '123@abc',
     ),
     quantity: 8,
+    date: "2021-04-20",
   ),
   '13': const Food(
     id: '13',
@@ -288,6 +300,7 @@ const DUMMY_FOODS = {
       password: '123@abc',
     ),
     quantity: 6,
+    date: "2021-04-10",
   ),
   '14': const Food(
     id: '14',
@@ -310,6 +323,7 @@ const DUMMY_FOODS = {
       password: '123@abc',
     ),
     quantity: 1,
+    date: "2021-04-10",
   ),
   '15': const Food(
     id: '15',
@@ -332,6 +346,7 @@ const DUMMY_FOODS = {
       password: '123@abc',
     ),
     quantity: 5,
+    date: "2021-04-02",
   ),
   '16': const Food(
     id: '16',
@@ -354,6 +369,7 @@ const DUMMY_FOODS = {
       password: '123@abc',
     ),
     quantity: 2,
+    date: "2021-04-02",
   ),
   '17': const Food(
     id: '17',
@@ -376,6 +392,7 @@ const DUMMY_FOODS = {
       password: 'abcde',
     ),
     quantity: 9,
+    date: "2021-03-27",
   ),
   '18': const Food(
     id: '18',
@@ -398,6 +415,7 @@ const DUMMY_FOODS = {
       password: '123@abc',
     ),
     quantity: 7,
+    date: "2021-04-21",
   ),
   '19': const Food(
     id: '19',
@@ -420,6 +438,7 @@ const DUMMY_FOODS = {
       password: 'abcde',
     ),
     quantity: 4,
+    date: "2021-04-20",
   ),
   '20': const Food(
     id: '20',
@@ -442,5 +461,6 @@ const DUMMY_FOODS = {
       password: 'abcde',
     ),
     quantity: 1,
+    date: "2021-04-20",
   ),
 };

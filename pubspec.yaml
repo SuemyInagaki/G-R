@@ -32,6 +32,8 @@ dependencies:
   flutter_ibm_watson: ^0.0.4
   couchdb: ^0.7.0
   charts_flutter: ^0.10.0
+  provider: ^5.0.0
+  email_validator: ^2.0.1
   
   
   
@@ -40,7 +42,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  provider:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

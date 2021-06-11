@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:c4c/routes/app_route.dart';
-//import 'package:http/http.dart' as http;
-//import 'package:cpfcnpj/cpfcnpj.dart';
-//import 'package:c4c/provider/users.dart';
-//import 'package:provider/provider.dart';
-//import 'package:c4c/colors.dart';
+import 'package:c4c/provider/users.dart';
+import 'package:provider/provider.dart';
+import 'package:email_validator/email_validator.dart';
+import 'package:c4c/views/home.dart';
+import 'package:c4c/components/colors.dart';
 
 class MyLoginPage extends StatefulWidget {
   MyLoginPage({Key? key}) : super(key: key);
@@ -14,22 +14,29 @@ class MyLoginPage extends StatefulWidget {
 }
 
 class _MyLoginPage extends State<MyLoginPage> {
-  TextEditingController telController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  int encontraEmail(String mail, String pwd) {
+    final Users users = Provider.of(context, listen: false);
+    for (int i = 0; i < users.count; i++) {
+      if (users.byIndex(i).email == mail && users.byIndex(i).password == pwd) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
   void _auth() async {
-    String tel = telController.text;
+    String mail = emailController.text;
     String pwd = passwordController.text;
-    /*
-    Aqui buscaria os dados no banco de dados
-    e faria a autenticação. Depois passaria
-    Os dados do usuário para a próxima página.
-    Passei só o tel em uma lista pq é o que tenho
-    */
-    Navigator.of(context).pushNamed(
-      AppRoutes.HOME,
-      //arguments: [tel],
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => MyHome(),
+      ),
     );
   }
 
@@ -42,29 +49,33 @@ class _MyLoginPage extends State<MyLoginPage> {
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
-              //crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Container(
-                  //padding: EdgeInsets.only(left: 30.0, right: 30.0, top: 50.0),
-                  child: Image.asset("images/logo.jpeg", scale: 1),
+                  child: CircleAvatar(
+                    backgroundColor: Colors.white,
+                    radius: 150,
+                    backgroundImage: AssetImage("images/logo.png"),
+                  ),
                 ),
                 Padding(
                   padding: EdgeInsets.all(8.0),
                 ),
                 Container(
-                  padding: EdgeInsets.fromLTRB(25.0, 1.0, 25.0, 10.0),
+                  padding: EdgeInsets.fromLTRB(40.0, 1.0, 40.0, 10.0),
                   child: TextFormField(
                     obscureText: false,
-                    keyboardType: TextInputType.number,
+                    keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       border: UnderlineInputBorder(),
-                      labelText: 'Phone',
+                      labelText: 'Email',
                     ),
-                    controller: telController,
+                    controller: emailController,
                     validator: (value) {
                       if (value != null) {
                         if (value.isEmpty) {
-                          return "Phone required";
+                          return "Email required";
+                        } else if (!EmailValidator.validate(value)) {
+                          return "Invalid email";
                         }
                       }
                       return null;
@@ -72,7 +83,7 @@ class _MyLoginPage extends State<MyLoginPage> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.fromLTRB(25.0, 0.0, 25.0, 2.0),
+                  padding: EdgeInsets.fromLTRB(40.0, 0.0, 40.0, 2.0),
                   child: TextFormField(
                     obscureText: true,
                     decoration: InputDecoration(
@@ -91,20 +102,46 @@ class _MyLoginPage extends State<MyLoginPage> {
                   ),
                 ),
                 Container(
-                  alignment: Alignment.center,
-                  padding: EdgeInsets.all(8),
-                  width: 200,
-                  height: 48,
+                  padding: EdgeInsets.only(
+                      top: 50.0, bottom: 8.0, left: 20.0, right: 20.0),
                   child: Material(
+                    elevation: 8.0,
+                    borderRadius: BorderRadius.circular(8.0),
+                    color: MyColors.myRed,
                     child: MaterialButton(
                       minWidth: MediaQuery.of(context).size.width,
                       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                      onPressed: () {},
+                      onPressed: () {
+                        if (_formKey.currentState != null) {
+                          if (_formKey.currentState!.validate()) {
+                            String e = emailController.text;
+                            String p = passwordController.text;
+                            if (encontraEmail(e, p) != -1)
+                              _auth();
+                            else {
+                              final snack = SnackBar(
+                                content: Text("Invalid email or password"),
+                                action: SnackBarAction(
+                                    label: "",
+                                    textColor: Colors.white,
+                                    onPressed: () {}),
+                                duration: Duration(seconds: 2),
+                              );
+
+                              ScaffoldMessenger.of(context)
+                                  .removeCurrentSnackBar();
+                              ScaffoldMessenger.of(context).showSnackBar(snack);
+                            }
+                          }
+                        }
+                      },
                       child: Text(
-                        "Forgot my password",
+                        "Log in",
+                        textAlign: TextAlign.center,
                         style: TextStyle(
-                          decoration: TextDecoration.underline,
-                          color: Colors.grey,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 23,
                         ),
                       ),
                     ),
@@ -112,36 +149,11 @@ class _MyLoginPage extends State<MyLoginPage> {
                 ),
                 Container(
                   padding: EdgeInsets.only(
-                      top: 20.0, bottom: 8.0, left: 20.0, right: 20.0),
+                      bottom: 20.0, left: 20.0, right: 20.0, top: 15),
                   child: Material(
                     elevation: 8.0,
                     borderRadius: BorderRadius.circular(8.0),
-                    color: Colors.green,
-                    child: MaterialButton(
-                      minWidth: MediaQuery.of(context).size.width,
-                      padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                      onPressed: () {
-                        if (_formKey.currentState != null) {
-                          if (_formKey.currentState!.validate()) {
-                            _auth();
-                          }
-                        }
-                      },
-                      child: Text(
-                        "Login",
-                        textAlign: TextAlign.center,
-                        // style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ),
-                ),
-                Container(
-                  padding:
-                      EdgeInsets.only(bottom: 20.0, left: 20.0, right: 20.0),
-                  child: Material(
-                    elevation: 8.0,
-                    borderRadius: BorderRadius.circular(8.0),
-                    color: Colors.green,
+                    color: MyColors.myRed,
                     child: MaterialButton(
                       minWidth: MediaQuery.of(context).size.width,
                       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -151,37 +163,17 @@ class _MyLoginPage extends State<MyLoginPage> {
                         );
                       },
                       child: Text(
-                        "Register",
+                        "Sign Up",
                         textAlign: TextAlign.center,
-                        // style: TextStyle(color: Colors.white),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 23,
+                        ),
                       ),
                     ),
                   ),
                 ),
-                // Container(
-                //   alignment: Alignment.bottomCenter,
-                //   padding: EdgeInsets.all(8),
-                //   width: 200,
-                //   height: 48,
-                //   child: Material(
-                //     child: MaterialButton(
-                //       minWidth: MediaQuery.of(context).size.width,
-                //       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                //       onPressed: () {
-                //         Navigator.of(context).pushNamed(
-                //           AppRoutes.REGISTER,
-                //         );
-                //       },
-                //       child: Text(
-                //         "Cadastrar",
-                //         textAlign: TextAlign.center,
-                //         style: TextStyle(
-                //           decoration: TextDecoration.underline,
-                //         ),
-                //       ),
-                //     ),
-                //   ),
-                // ),
               ],
             ),
           ),

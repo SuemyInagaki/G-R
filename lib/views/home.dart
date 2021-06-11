@@ -1,5 +1,6 @@
 //import 'dart:html';
 
+import 'package:c4c/components/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:c4c/routes/app_route.dart';
 import 'dart:ui';
@@ -36,14 +37,14 @@ class MyHome extends StatelessWidget {
           flexibleSpace: const FlexibleSpaceBar(
             title: Padding(
               padding: EdgeInsets.only(
-                right: 10,
+                right: 7,
                 left: 8.0,
               ),
               child: Text(
-                'Give & Receive',
+                'Give And Receive',
                 style: TextStyle(
                   fontSize: 25,
-                  color: Colors.white,
+                  color: MyColors.myRed,
                   fontWeight: FontWeight.w900,
                 ),
               ),
@@ -51,40 +52,25 @@ class MyHome extends StatelessWidget {
             background: Image(
               image: AssetImage("images/img2.png"),
               fit: BoxFit.cover,
+              color: MyColors.myWhite,
             ),
           ),
         ),
         SliverFixedExtentList(
-          itemExtent: 125.0,
+          itemExtent: 280.0,
           delegate: SliverChildListDelegate(
             [
               Container(
-                padding: EdgeInsets.only(
-                  left: 20,
-                  top: 25,
-                ),
+                // padding: EdgeInsets.only(
+                //   left: 20,
+                //   top: 25,
+                // ),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  // mainAxisAlignment: MainAxisAlignment.start,
+                  // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "This is a title",
-                      style: TextStyle(
-                        color: Colors.green[900],
-                        fontSize: 40,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    // SizedBox(
-                    //   height: 7,
-                    // ),
-                    Text(
-                      "This is a subtitle",
-                      style: TextStyle(
-                        color: Colors.green[700],
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    Image(
+                      image: AssetImage('images/img1.png'),
                     ),
                   ],
                 ),
@@ -99,16 +85,20 @@ class MyHome extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                child: Text(
-                  "Text muito grande como que fica quero um texto enorme blabalbla imagine uma materia aqui ou alguma informação ou algum texto introdutorio sobre o que é give and receive cmo sera que esta agora? ",
-                  style: TextStyle(
-                    color: Colors.grey[700],
-                    fontSize: 18,
-                  ),
-                ),
-              ),
+              // Container(
+              //   padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              //   child: Row(
+              //     children: [
+              //       // Text('oi'),
+              //       ClipRRect(
+              //         borderRadius: BorderRadius.circular(50),
+              //         child: Image(
+              //           image: AssetImage('images/img2.png'),
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
               Container(
                 padding: EdgeInsets.only(
                   left: 20,
@@ -175,11 +165,11 @@ class MyHome extends StatelessWidget {
         children: <Widget>[
           DrawerHeader(
             decoration: BoxDecoration(
-              //color: Colors.green,
-              image: DecorationImage(
-                image: ExactAssetImage('images/img3.png'),
-                fit: BoxFit.cover,
-              ),
+              color: MyColors.myRed,
+              // image: DecorationImage(
+              //   image: ExactAssetImage('images/img3.png'),
+              //   fit: BoxFit.cover,
+              // ),
             ),
             //padding: EdgeInsets.only(top: 110.0, left: 10.0),
             child: Stack(
@@ -187,7 +177,7 @@ class MyHome extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerLeft,
                   child: CircleAvatar(
-                    backgroundColor: Colors.white,
+                    backgroundColor: MyColors.myWhite,
                     radius: 50,
                     backgroundImage: AssetImage("images/logo.png"),
                   ),
