@@ -5,157 +5,155 @@ import 'package:flutter/material.dart';
 import 'package:c4c/routes/app_route.dart';
 import 'dart:ui';
 import 'package:c4c/views/requests.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
-class MyHome extends StatelessWidget {
+class MyHome extends StatefulWidget {
   //const MyHome({Key? key}) : super(key: key);
   //final List _data;
 
-  //MyHome(this._data);
+  @override
+  _MyHome createState() => _MyHome();
+}
+
+class _MyHome extends State<MyHome> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  late CarouselSlider instance;
   @override
   Widget build(BuildContext context) {
+    instance = new CarouselSlider(
+      items: [
+        Image(
+          image: AssetImage('images/img1.png'),
+          width: 550,
+          height: 310,
+          fit: BoxFit.cover,
+        ),
+        Image(
+          image: AssetImage('images/img2.png'),
+          width: 550,
+          height: 310,
+          fit: BoxFit.cover,
+        ),
+      ],
+      options: CarouselOptions(
+        autoPlay: true,
+        autoPlayAnimationDuration: Duration(milliseconds: 4000),
+        enableInfiniteScroll: true,
+        autoPlayCurve: Curves.ease,
+        viewportFraction: 1,
+      ),
+    );
+
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text("Home"),
-      // ),
       drawer: _createDrawer(context),
+      //body: _createBody(),
       body: _createBody(),
+      appBar: AppBar(
+          backgroundColor: MyColors.myWhite,
+          toolbarHeight: 70,
+          title: Text(
+            'Give and Receive',
+            //textAlign: TextAlign.end,
+            style: TextStyle(
+              fontSize: 34,
+              color: MyColors.myRed,
+              fontWeight: FontWeight.w900,
+              //fontFamily: ,
+            ),
+          ),
+          iconTheme: IconThemeData(color: MyColors.myRed)),
+    );
+  }
+
+  Widget _createBody() {
+    return //SingleChildScrollView(
+        //child:
+        Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Padding(padding: EdgeInsets.all(0)),
+        instance,
+        Expanded(
+          child: Container(
+            padding: EdgeInsets.all(0),
+            child: Text("Oi teste2"),
+            color: MyColors.myWhite,
+            width: 500,
+            //height: 182,
+          ),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Column(
+              children: [
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  padding: EdgeInsets.all(0),
+                  child: Text("Oi teste\n\n\n\n\n\n\n"),
+                  // color: MyColors.myWhite,
+                  //height: 182,
+                ),
+                Center(
+                  child: Material(
+                    elevation: 4.0,
+                    borderRadius: BorderRadius.circular(40),
+                    color: MyColors.myRed,
+                    child: MaterialButton(
+                      // minWidth: MediaQuery.of(context).size.width,
+                      minWidth: 100,
+                      //padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                      onPressed: () {},
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+              ],
+            ),
+            SizedBox(
+              width: 20,
+            ),
+            Padding(
+              padding: EdgeInsets.all(0),
+              child: Container(
+                child: Material(
+                  elevation: 8.0,
+                  borderRadius: BorderRadius.circular(40),
+                  child: Image(
+                    image: ExactAssetImage('images/img1.png'),
+                    width: 150,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        Expanded(
+          child: Container(
+            padding: EdgeInsets.all(0),
+            child: Text("Oi teste"),
+            color: MyColors.myWhite,
+            width: 500,
+            //height: 182,
+          ),
+        ),
+      ],
+      //),
     );
   }
 
   bool _pinned = true;
   bool _snap = false;
   bool _floating = false;
-
-  Widget _createBody() {
-    return CustomScrollView(
-      slivers: <Widget>[
-        SliverAppBar(
-          pinned: _pinned,
-          snap: _snap,
-          floating: _floating,
-          expandedHeight: 160.0,
-          flexibleSpace: const FlexibleSpaceBar(
-            title: Padding(
-              padding: EdgeInsets.only(
-                right: 7,
-                left: 8.0,
-              ),
-              child: Text(
-                'Give And Receive',
-                style: TextStyle(
-                  fontSize: 25,
-                  color: MyColors.myRed,
-                  fontWeight: FontWeight.w900,
-                ),
-              ),
-            ),
-            background: Image(
-              image: AssetImage("images/img2.png"),
-              fit: BoxFit.cover,
-              color: MyColors.myWhite,
-            ),
-          ),
-        ),
-        SliverFixedExtentList(
-          itemExtent: 280.0,
-          delegate: SliverChildListDelegate(
-            [
-              Container(
-                // padding: EdgeInsets.only(
-                //   left: 20,
-                //   top: 25,
-                // ),
-                child: Column(
-                  // mainAxisAlignment: MainAxisAlignment.start,
-                  // crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Image(
-                      image: AssetImage('images/img1.png'),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                child: Text(
-                  "Text muito grande como que fica quero um texto enorme blabalbla imagine uma materia aqui ou alguma informação ou algum texto introdutorio sobre o que é give and receive cmo sera que esta agora? ",
-                  style: TextStyle(
-                    color: Colors.grey[700],
-                    fontSize: 18,
-                  ),
-                ),
-              ),
-              // Container(
-              //   padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-              //   child: Row(
-              //     children: [
-              //       // Text('oi'),
-              //       ClipRRect(
-              //         borderRadius: BorderRadius.circular(50),
-              //         child: Image(
-              //           image: AssetImage('images/img2.png'),
-              //         ),
-              //       ),
-              //     ],
-              //   ),
-              // ),
-              Container(
-                padding: EdgeInsets.only(
-                  left: 20,
-                  top: 25,
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "This is a title",
-                      style: TextStyle(
-                        color: Colors.green[900],
-                        fontSize: 40,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    // SizedBox(
-                    //   height: 7,
-                    // ),
-                    Text(
-                      "This is a subtitle",
-                      style: TextStyle(
-                        color: Colors.green[700],
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.fromLTRB(20, 0, 10, 20),
-                child: Text(
-                  "Text muito grande como que fica quero um texto enorme blabalbla imagine uma materia aqui ou alguma informação ou algum texto introdutorio sobre o que é give and receive cmo sera que esta agora? ",
-                  style: TextStyle(
-                    color: Colors.grey[700],
-                    fontSize: 18,
-                  ),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
-                child: Text(
-                  "Text muito grande como que fica quero um texto enorme blabalbla imagine uma materia aqui ou alguma informação ou algum texto introdutorio sobre o que é give and receive cmo sera que esta agora? ",
-                  style: TextStyle(
-                    color: Colors.grey[700],
-                    fontSize: 18,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
 
   Widget _createDrawer(BuildContext context) {
     return Drawer(
@@ -166,12 +164,7 @@ class MyHome extends StatelessWidget {
           DrawerHeader(
             decoration: BoxDecoration(
               color: MyColors.myRed,
-              // image: DecorationImage(
-              //   image: ExactAssetImage('images/img3.png'),
-              //   fit: BoxFit.cover,
-              // ),
             ),
-            //padding: EdgeInsets.only(top: 110.0, left: 10.0),
             child: Stack(
               children: [
                 Align(
@@ -199,7 +192,6 @@ class MyHome extends StatelessWidget {
                     "Give & Receive",
                     style: TextStyle(
                       color: Colors.white70,
-                      //fontWeight: FontWeight.bold,
                       fontSize: 20.0,
                     ),
                   ),
@@ -235,15 +227,6 @@ class MyHome extends StatelessWidget {
             },
             leading: Icon(Icons.receipt),
           ),
-          // ListTile(
-          //   title: Text('Statistics'),
-          //   onTap: () {
-          //     // Navigator.pop(context);
-          //     Navigator.push(context,
-          //         MaterialPageRoute(builder: (context) => Statistics()));
-          //   },
-          //   leading: Icon(Icons.equalizer),
-          // ),
           ListTile(
             title: Text('Settings'),
             onTap: () {
