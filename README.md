@@ -24,27 +24,28 @@ A new Flutter project.
 
 <table>
   <tr>
+   
     <td align="center">
       <a href="#">
-        <img src="https://avatars3.githubusercontent.com/u/31936044" width="100px;" alt="Foto do Iuri Silva no GitHub"/><br>
+        <img src="https://avatars0.githubusercontent.com/u/57146734" width="100px;" alt="Foto da Danielli Cassiano"/><br>
         <sub>
-          <b>Iuri Silva</b>
+          <b>Danielli Cassiano</b>
         </sub>
       </a>
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://avatars1.githubusercontent.com/u/43486606" width="100px;" alt="Foto do Marcelo Santos"/><br>
+        <img src="https://avatars1.githubusercontent.com/u/43486606" width="100px;" alt="Foto da Juliana Morroni"/><br>
         <sub>
-          <b>Marcelo Santos</b>
+          <b>Juliana Morroni</b>
         </sub>
       </a>
     </td>
-    <td align="center">
+     <td align="center">
       <a href="#">
-        <img src="https://avatars0.githubusercontent.com/u/57146734" width="100px;" alt="Foto da Vanessa Swerts"/><br>
+        <img src="https://avatars3.githubusercontent.com/u/31936044" width="100px;" alt="Foto da Suemy Inagaki"/><br>
         <sub>
-          <b>Vanessa Swerts</b>
+          <b>Suemy Inagaki</b>
         </sub>
       </a>
     </td>
