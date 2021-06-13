@@ -1,4 +1,4 @@
-#G&R
+# G&R
 ### Give and Receive 
 🍎🤝👨‍🌾🌱
 
