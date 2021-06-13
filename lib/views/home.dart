@@ -179,7 +179,7 @@ class _MyHome extends State<MyHome> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => MyStatistics()));
+                                builder: (context) => MyStatistics(user)));
                       },
                       child: Text(
                         "My statistics",
