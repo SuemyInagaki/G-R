@@ -1,3 +1,4 @@
+import 'package:c4c/models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:c4c/routes/app_route.dart';
 import 'package:c4c/provider/users.dart';
@@ -18,10 +19,13 @@ class _MyLoginPage extends State<MyLoginPage> {
   TextEditingController passwordController = TextEditingController();
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  late User _user;
+
   int encontraEmail(String mail, String pwd) {
     final Users users = Provider.of(context, listen: false);
     for (int i = 0; i < users.count; i++) {
       if (users.byIndex(i).email == mail && users.byIndex(i).password == pwd) {
+        _user = users.byIndex(i);
         return i;
       }
     }
@@ -29,13 +33,10 @@ class _MyLoginPage extends State<MyLoginPage> {
   }
 
   void _auth() async {
-    String mail = emailController.text;
-    String pwd = passwordController.text;
-
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => MyHome(),
+        builder: (context) => MyHome(_user),
       ),
     );
   }

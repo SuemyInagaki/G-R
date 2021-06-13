@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:c4c/components/colors.dart';
 import 'package:c4c/models/address.dart';
 import 'package:c4c/models/user.dart';
@@ -5,13 +8,8 @@ import 'package:c4c/provider/users.dart';
 import 'package:c4c/views/home.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-import 'package:c4c/routes/app_route.dart';
-//import 'package:http/http.dart' as http;
-//import 'package:cpfcnpj/cpfcnpj.dart';
-//import 'package:abcd/provider/users.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
-//import 'package:abcd/colors.dart';
-//import 'package:email_validator/email_validator.dart';
 
 class MyRegister extends StatefulWidget {
   //MyRegister({Key? key, this.title = 'Register'}) : super(key: key);
@@ -32,31 +30,9 @@ class _MyRegister extends State<MyRegister> {
 
   List _formList = [];
   Map _formData = {};
-  //b
-  //b
-  //b
-  //b
-  //b
-  //   'id': '',
-  //   'name': '',
-  //   'phone': '',
-  //   'password': '',
-  //   'address': {
-  //     'name': 'my house',
-  //     'country': '',
-  //     'state': '',
-  //     'city': '',
-  //     'address': '',
-  //     'code': '',
-  //   },
-  //
 
   var _senha = "";
   @override
-  // void initState() {
-  //   _formData = {};
-  // }
-
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -114,11 +90,9 @@ class _MyRegister extends State<MyRegister> {
                       } else if (value.trim().length < 5) {
                         return "Min. 5 characters";
                       }
-                      Map<String, dynamic> m = {'name': value};
+
                       _formData['name'] = value;
-                      print("aqui\n");
-                      print(_formData['name']);
-                      _formList.add(m);
+
                       return null;
                     },
                   ),
@@ -334,9 +308,7 @@ class _MyRegister extends State<MyRegister> {
                       onPressed: () {
                         bool isValid = _formKey.currentState!.validate();
                         if (isValid) {
-                          final Users users =
-                              Provider.of(context, listen: false);
-                          users.put(User(
+                          User user = User(
                             id: '',
                             name: _formData['name'],
                             phone: _formData['phone'],
@@ -350,7 +322,11 @@ class _MyRegister extends State<MyRegister> {
                               postal: _formData['postal'],
                             ),
                             password: _formData['password'],
-                          ));
+                          );
+
+                          final Users users =
+                              Provider.of(context, listen: false);
+                          users.put(user);
                           final snack = SnackBar(
                             content: Text("Registration success!"),
                             action: SnackBarAction(
@@ -365,7 +341,7 @@ class _MyRegister extends State<MyRegister> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => MyHome(),
+                              builder: (context) => MyHome(user),
                             ),
                           );
                         }

@@ -1,25 +1,30 @@
+import 'package:c4c/components/colors.dart';
+import 'package:c4c/models/user.dart';
+import 'package:c4c/views/home.dart';
 import 'package:flutter/material.dart';
 import 'package:c4c/routes/app_route.dart';
-//import 'package:http/http.dart' as http;
-//import 'package:cpfcnpj/cpfcnpj.dart';
-//import 'package:abcd/provider/users.dart';
-//import 'package:provider/provider.dart';
-//import 'package:abcd/colors.dart';
-//import 'package:email_validator/email_validator.dart';
+import 'package:c4c/provider/foods.dart';
+import 'package:c4c/models/food.dart';
+import 'package:provider/provider.dart';
 import 'package:path/path.dart';
 import 'package:async/async.dart';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 
 class MyAddPage extends StatefulWidget {
-  MyAddPage({Key? key, this.title = 'Register'}) : super(key: key);
-  final String title;
+  //MyAddPage({Key? key, this.title = 'Register'}) : super(key: key);
+  //final String title;
+  late final User _user;
+  MyAddPage(this._user);
 
   @override
-  _MyAddPage createState() => _MyAddPage();
+  _MyAddPage createState() => _MyAddPage(this._user);
 }
 
 class _MyAddPage extends State<MyAddPage> {
+  Map _formData = {};
+  late final User _user;
+  _MyAddPage(this._user);
   TextEditingController typeController = TextEditingController();
   TextEditingController qtdController = TextEditingController();
   TextEditingController foodController = TextEditingController();
@@ -35,6 +40,8 @@ class _MyAddPage extends State<MyAddPage> {
   }
 
   Widget build(BuildContext context) {
+    final Foods _foodList = Provider.of(context);
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -66,8 +73,6 @@ class _MyAddPage extends State<MyAddPage> {
                       width: 300,
                       height: 200,
                       color: Colors.grey,
-                      //padding: EdgeInsets.only(left: 30.0, right: 30.0, top: 50.0),
-                      //child: Image.asset("images/potato.jpeg", scale: 7),
                     ),
                     Column(
                       children: [
@@ -86,6 +91,9 @@ class _MyAddPage extends State<MyAddPage> {
                 Padding(
                   padding: EdgeInsets.all(8.0),
                 ),
+                SizedBox(
+                  height: 20,
+                ),
                 Container(
                   padding: EdgeInsets.fromLTRB(25.0, 1.0, 25.0, 10.0),
                   child: TextFormField(
@@ -100,6 +108,7 @@ class _MyAddPage extends State<MyAddPage> {
                       if (value!.isEmpty) {
                         return "Type required";
                       }
+                      _formData["type"] = value;
                       return null;
                     },
                   ),
@@ -118,6 +127,26 @@ class _MyAddPage extends State<MyAddPage> {
                       if (value!.isEmpty) {
                         return "Food required";
                       }
+                      _formData["food"] = value;
+                      return null;
+                    },
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.fromLTRB(25.0, 1.0, 25.0, 10.0),
+                  child: TextFormField(
+                    obscureText: false,
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                      border: UnderlineInputBorder(),
+                      labelText: 'Finality',
+                    ),
+                    //controller: foodController,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "Finality required";
+                      }
+                      _formData["finality"] = value;
                       return null;
                     },
                   ),
@@ -155,21 +184,42 @@ class _MyAddPage extends State<MyAddPage> {
                       } else if (int.parse(value) < 1) {
                         return "Min 1";
                       }
+                      _formData["quantity"] = value;
                       return null;
                     },
                   ),
+                ),
+                SizedBox(
+                  height: 20,
                 ),
                 Container(
                   padding: EdgeInsets.fromLTRB(20.0, 40.0, 20.0, 30.0),
                   child: Material(
                     elevation: 8.0,
                     borderRadius: BorderRadius.circular(8.0),
-                    color: Colors.green,
+                    color: MyColors.myRed,
                     child: MaterialButton(
                       minWidth: MediaQuery.of(context).size.width,
+                      height: 20,
                       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
+                          Food food = Food(
+                            id: '',
+                            type: _formData["type"],
+                            name: _formData["food"],
+                            date: selectedDate.toString(),
+                            quantity: int.parse(_formData["quantity"]),
+                            finality: _formData["finality"],
+                            donor: _user,
+                          );
+                          _foodList.put(food);
+
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MyHome(_user)));
+
                           final snack = SnackBar(
                             content: Text("Food added successfully!"),
                             action: SnackBarAction(
@@ -186,6 +236,11 @@ class _MyAddPage extends State<MyAddPage> {
                       child: Text(
                         "Add",
                         textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 23,
+                        ),
                       ),
                     ),
                   ),

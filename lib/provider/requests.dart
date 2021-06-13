@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:c4c/models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:c4c/data/dummy_requests.dart';
 import 'package:c4c/models/request.dart';
@@ -9,6 +10,16 @@ class RequestsProvider with ChangeNotifier {
 
   List<Request> get all {
     return [..._items.values];
+  }
+
+  List<Request> getByUser(User user) {
+    List<Request> r = [];
+    for (int i = 0; i < _items.length; i++) {
+      if (_items.values.elementAt(i).requester.name == user.name) {
+        r.add(_items.values.elementAt(i));
+      }
+    }
+    return r;
   }
 
   int get count {

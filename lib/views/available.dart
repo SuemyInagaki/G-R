@@ -1,3 +1,4 @@
+import 'package:c4c/models/user.dart';
 import 'package:flutter/material.dart';
 
 import 'package:c4c/views/foodpage.dart';
@@ -6,10 +7,14 @@ import 'package:c4c/provider/foods.dart' as food;
 
 class FoodsAvailable extends StatefulWidget {
   @override
-  _FoodsAvailableState createState() => _FoodsAvailableState();
+  _FoodsAvailableState createState() => _FoodsAvailableState(this._user);
+  late final User _user;
+  FoodsAvailable(this._user);
 }
 
 class _FoodsAvailableState extends State<FoodsAvailable> {
+  late final User _user;
+  _FoodsAvailableState(this._user);
   @override
   void initState() {
     super.initState();
@@ -27,8 +32,11 @@ class _FoodsAvailableState extends State<FoodsAvailable> {
           title: Text(_foodList.byIndex(index).name),
           trailing: Text("$_dist km"),
           onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => FoodPage(index)));
+            final _foodData = _foodList.byIndex(index);
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => FoodPage(_foodData, _user, index)));
           },
         ),
       );

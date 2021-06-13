@@ -1,41 +1,80 @@
 //import 'dart:html';
 
 import 'package:c4c/components/colors.dart';
+import 'package:c4c/views/add.dart';
+import 'package:c4c/views/available.dart';
 import 'package:flutter/material.dart';
 import 'package:c4c/routes/app_route.dart';
 import 'dart:ui';
 import 'package:c4c/views/requests.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:c4c/views/statistics.dart';
+import 'package:c4c/models/user.dart';
 
 class MyHome extends StatefulWidget {
   //const MyHome({Key? key}) : super(key: key);
   //final List _data;
+  late final User user;
+  MyHome(this.user);
 
   @override
-  _MyHome createState() => _MyHome();
+  _MyHome createState() => _MyHome(this.user);
 }
 
 class _MyHome extends State<MyHome> {
+  late final User user;
+  _MyHome(this.user);
   @override
   void initState() {
     super.initState();
   }
 
   late CarouselSlider instance;
+  late CarouselSlider instance2;
   @override
   Widget build(BuildContext context) {
     instance = new CarouselSlider(
       items: [
         Image(
-          image: AssetImage('images/img1.png'),
-          width: 550,
-          height: 310,
+          image: AssetImage('images/image1.png'),
+          width: double.infinity,
+          //height: 310,
           fit: BoxFit.cover,
         ),
         Image(
-          image: AssetImage('images/img2.png'),
-          width: 550,
-          height: 310,
+          image: AssetImage('images/image2.png'),
+          width: double.infinity,
+          //height: 310,
+          fit: BoxFit.cover,
+        ),
+        Image(
+          image: AssetImage('images/image3.png'),
+          width: double.infinity,
+          //height: 310,
+          fit: BoxFit.cover,
+        ),
+        Image(
+          image: AssetImage('images/image4.png'),
+          width: double.infinity,
+          //height: 310,
+          fit: BoxFit.cover,
+        ),
+        Image(
+          image: AssetImage('images/image5.png'),
+          width: double.infinity,
+          //height: 310,
+          fit: BoxFit.cover,
+        ),
+        Image(
+          image: AssetImage('images/image6.png'),
+          width: double.infinity,
+          //height: 310,
+          fit: BoxFit.cover,
+        ),
+        Image(
+          image: AssetImage('images/image7.png'),
+          width: double.infinity,
+          //height: 310,
           fit: BoxFit.cover,
         ),
       ],
@@ -48,9 +87,36 @@ class _MyHome extends State<MyHome> {
       ),
     );
 
+    instance2 = new CarouselSlider(
+      items: [
+        Text(
+          "1000 kg of food waste causes approximatelly the emission of 2500 kg of CO2",
+          textAlign: TextAlign.justify,
+        ),
+        Text(
+          "1.75 tons of waste per year",
+          textAlign: TextAlign.justify,
+        ),
+        Text(
+          "According to Food & Agriculture Organizaton of the United Nations (FAO) from 2013, food waste is the third highest emitter of GHG emissions.",
+          textAlign: TextAlign.justify,
+        ),
+        // Text(
+        //   "",
+        //   textAlign: TextAlign.justify,
+        // ),
+      ],
+      options: CarouselOptions(
+        autoPlay: true,
+        autoPlayAnimationDuration: Duration(milliseconds: 4000),
+        enableInfiniteScroll: true,
+        autoPlayCurve: Curves.ease,
+        viewportFraction: 1,
+      ),
+    );
+
     return Scaffold(
       drawer: _createDrawer(context),
-      //body: _createBody(),
       body: _createBody(),
       appBar: AppBar(
           backgroundColor: MyColors.myWhite,
@@ -70,21 +136,18 @@ class _MyHome extends State<MyHome> {
   }
 
   Widget _createBody() {
-    return //SingleChildScrollView(
-        //child:
-        Column(
-      mainAxisAlignment: MainAxisAlignment.start,
+    return ListView(
       children: [
         Padding(padding: EdgeInsets.all(0)),
         instance,
-        Expanded(
-          child: Container(
-            padding: EdgeInsets.all(0),
-            child: Text("Oi teste2"),
-            color: MyColors.myWhite,
-            width: 500,
-            //height: 182,
+        Container(
+          padding: EdgeInsets.all(30),
+          child: Text(
+            "It is our responsibility to take steps not only to check all types of waste, but also to protect natural resources.",
+            textAlign: TextAlign.justify,
           ),
+          color: MyColors.myWhite,
+          width: 500,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -95,10 +158,15 @@ class _MyHome extends State<MyHome> {
                   height: 20,
                 ),
                 Container(
-                  padding: EdgeInsets.all(0),
-                  child: Text("Oi teste\n\n\n\n\n\n\n"),
-                  // color: MyColors.myWhite,
-                  //height: 182,
+                  padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                  child: Text(
+                    "We believe that the world moves according to the conscience of each one",
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(
+                      fontSize: 14,
+                    ),
+                  ),
+                  width: 200,
                 ),
                 Center(
                   child: Material(
@@ -106,10 +174,22 @@ class _MyHome extends State<MyHome> {
                     borderRadius: BorderRadius.circular(40),
                     color: MyColors.myRed,
                     child: MaterialButton(
-                      // minWidth: MediaQuery.of(context).size.width,
-                      minWidth: 100,
-                      //padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                      onPressed: () {},
+                      minWidth: 140,
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MyStatistics()));
+                      },
+                      child: Text(
+                        "My statistics",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -122,38 +202,39 @@ class _MyHome extends State<MyHome> {
               width: 20,
             ),
             Padding(
-              padding: EdgeInsets.all(0),
+              padding: EdgeInsets.all(10),
               child: Container(
                 child: Material(
                   elevation: 8.0,
                   borderRadius: BorderRadius.circular(40),
-                  child: Image(
-                    image: ExactAssetImage('images/img1.png'),
-                    width: 150,
-                    fit: BoxFit.cover,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Image(
+                      image: ExactAssetImage('images/woman.png'),
+                      width: 150,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
             ),
           ],
         ),
-        Expanded(
-          child: Container(
-            padding: EdgeInsets.all(0),
-            child: Text("Oi teste"),
-            color: MyColors.myWhite,
-            width: 500,
-            //height: 182,
-          ),
+        SizedBox(
+          height: 10,
+        ),
+        Container(
+          height: 140,
+          width: double.infinity,
+          padding: EdgeInsets.all(40),
+          color: MyColors.myWhite,
+          child: instance2,
         ),
       ],
-      //),
     );
   }
-
-  bool _pinned = true;
-  bool _snap = false;
-  bool _floating = false;
 
   Widget _createDrawer(BuildContext context) {
     return Drawer(
@@ -203,9 +284,10 @@ class _MyHome extends State<MyHome> {
             title: Text('Available foods'),
             onTap: () {
               Navigator.pop(context);
-              Navigator.of(context).pushNamed(
-                AppRoutes.AVAILABLE,
-              );
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => FoodsAvailable(user)));
             },
             leading: Icon(Icons.store),
           ),
@@ -213,9 +295,8 @@ class _MyHome extends State<MyHome> {
             title: Text('Add food'),
             onTap: () {
               Navigator.pop(context);
-              Navigator.of(context).pushNamed(
-                AppRoutes.ADD,
-              );
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => MyAddPage(user)));
             },
             leading: Icon(Icons.add_box),
           ),
@@ -223,7 +304,7 @@ class _MyHome extends State<MyHome> {
             title: Text('My requests'),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => MyRequests()));
+                  MaterialPageRoute(builder: (context) => MyRequests(user)));
             },
             leading: Icon(Icons.receipt),
           ),

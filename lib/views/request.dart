@@ -1,4 +1,5 @@
 import 'package:c4c/components/colors.dart';
+import 'package:c4c/models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:c4c/routes/app_route.dart';
 import 'package:c4c/models/food.dart';
@@ -6,14 +7,15 @@ import 'dart:ui';
 import 'package:provider/provider.dart';
 import 'package:c4c/provider/requests.dart';
 import 'package:c4c/models/request.dart';
+import 'package:c4c/provider/foods.dart' as food;
 
 //falta salvar os dados em requests
-// mas para isso preciso receber os dados do login
 
 class MyRequest extends StatelessWidget {
   late final Food _foodData;
   late final int _qtd;
-  MyRequest(this._foodData, this._qtd);
+  late final User _user;
+  MyRequest(this._foodData, this._qtd, this._user);
 
   @override
   Widget build(BuildContext context) {
@@ -26,14 +28,18 @@ class MyRequest extends StatelessWidget {
     String time =
         "${now.hour.toString().padLeft(2, '0')}:${now.minute.toString().padLeft(2, '0')}:${now.second.toString().padLeft(2, '0')}";
 
-    //final RequestsProvider _requestList = Provider.of(context);
-    // _requestList.put(Request(
-    //   id: '',
-    //   date: DateTime.now().toString(),
-    //   requester: ,
-    //   food: ,
-    //   quantity: ,
-    // ));
+    final food.Foods _foodList = Provider.of(context);
+
+    final RequestsProvider _requestList = Provider.of(context);
+    _requestList.put(
+      Request(
+        id: '',
+        date: DateTime.now().toString(),
+        requester: _user,
+        food: _foodData,
+        quantity: _qtd,
+      ),
+    );
     return Scaffold(
       appBar: AppBar(
           backgroundColor: MyColors.myWhite,

@@ -1,21 +1,29 @@
 import 'package:c4c/components/colors.dart';
+import 'package:c4c/models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:c4c/views/request.dart';
 import 'package:c4c/models/food.dart';
 import 'package:provider/provider.dart';
 import 'package:c4c/provider/foods.dart';
+import 'package:c4c/components/documents.dart';
 
 class FoodPage extends StatefulWidget {
+  late final Food foodData;
   late final int foodDataIndex;
-  FoodPage(this.foodDataIndex);
+  late final User _user;
+  FoodPage(this.foodData, this._user, this.foodDataIndex);
+
   @override
-  _FoodPage createState() => _FoodPage(foodDataIndex);
+  _FoodPage createState() =>
+      _FoodPage(this.foodData, this._user, this.foodDataIndex);
 }
 
 class _FoodPage extends State<FoodPage> {
+  late final Food _foodData;
+  late final User _user;
   late final int _foodDataIndex;
-  _FoodPage(this._foodDataIndex);
+  _FoodPage(this._foodData, this._user, this._foodDataIndex);
 
   @override
   int _qtd = 1;
@@ -28,7 +36,8 @@ class _FoodPage extends State<FoodPage> {
     var avatar = ExactAssetImage("images/potato.jpeg");
 
     final Foods _foodList = Provider.of(context);
-    final _dateParse = DateTime.parse(_foodList.byIndex(_foodDataIndex).date);
+
+    final _dateParse = DateTime.parse(_foodData.date);
     String date =
         "${_dateParse.day.toString().padLeft(2, '0')}/${_dateParse.month.toString().padLeft(2, '0')}/${_dateParse.year.toString()}";
 
@@ -105,7 +114,7 @@ class _FoodPage extends State<FoodPage> {
                               ),
                               SizedBox(height: 10.0),
                               Text(
-                                _foodList.byIndex(_foodDataIndex).type,
+                                _foodData.type,
                                 style: TextStyle(
                                     color: Colors.grey[800],
                                     fontSize: 20.0,
@@ -126,7 +135,7 @@ class _FoodPage extends State<FoodPage> {
                               ),
                               SizedBox(height: 10.0),
                               Text(
-                                _foodList.byIndex(_foodDataIndex).name,
+                                _foodData.name,
                                 style: TextStyle(
                                     color: Colors.grey[800],
                                     fontSize: 20.0,
@@ -244,33 +253,24 @@ class _FoodPage extends State<FoodPage> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => MyRequest(
-                                    _foodList.byIndex(_foodDataIndex), _qtd),
+                                builder: (context) =>
+                                    MyRequest(_foodData, _qtd, _user),
                               ),
                             );
-                            if (_foodList.byIndex(_foodDataIndex).quantity -
-                                    _qtd !=
-                                0) {
+                            if (_foodData.quantity - _qtd != 0) {
                               _foodList.put(
                                 Food(
-                                  id: _foodList.byIndex(_foodDataIndex).id,
-                                  type: _foodList.byIndex(_foodDataIndex).type,
-                                  name: _foodList.byIndex(_foodDataIndex).name,
-                                  finality: _foodList
-                                      .byIndex(_foodDataIndex)
-                                      .finality,
-                                  donor:
-                                      _foodList.byIndex(_foodDataIndex).donor,
-                                  date: _foodList.byIndex(_foodDataIndex).date,
-                                  quantity: _foodList
-                                          .byIndex(_foodDataIndex)
-                                          .quantity -
-                                      _qtd,
+                                  id: _foodData.id,
+                                  type: _foodData.type,
+                                  name: _foodData.name,
+                                  finality: _foodData.finality,
+                                  donor: _foodData.donor,
+                                  date: _foodData.date,
+                                  quantity: _foodData.quantity - _qtd,
                                 ),
                               );
                             } else {
-                              _foodList
-                                  .remove(_foodList.byIndex(_foodDataIndex));
+                              _foodList.remove(_foodData);
                             }
                           },
                           child: Text(

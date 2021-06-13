@@ -17,6 +17,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   bool _isAuth = false;
+  double w = 500;
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -27,25 +28,31 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (ctx) => food.Foods(),
         ),
-        // ChangeNotifierProvider(
-        //   create: (ctx) => Requests(),
-        // ),
-      ],
-      child: MaterialApp(
-        title: 'Give & Receive',
-        theme: ThemeData(
-          primarySwatch: MyColors.myRed,
-          backgroundColor: MyColors.myWhite,
-          // bottomAppBarColor: Colors.green,
+        ChangeNotifierProvider(
+          create: (ctx) => RequestsProvider(),
         ),
-        routes: {
-          //AppRoutes.HOME: (_) => MyHome(),
-          AppRoutes.LOGIN: (_) => MyLoginPage(),
-          AppRoutes.REGISTER: (_) => MyRegister(),
-          AppRoutes.AVAILABLE: (_) => FoodsAvailable(),
-          AppRoutes.ADD: (_) => MyAddPage(),
-        },
-        home: MyLoginPage(),
+      ],
+      child: Center(
+        child: SizedBox(
+          child: MaterialApp(
+            title: 'Give & Receive',
+            theme: ThemeData(
+              primarySwatch: MyColors.myRed,
+              backgroundColor: MyColors.myWhite,
+              // bottomAppBarColor: Colors.green,
+            ),
+            routes: {
+              //AppRoutes.HOME: (_) => MyHome(),
+              AppRoutes.LOGIN: (_) => MyLoginPage(),
+              AppRoutes.REGISTER: (_) => MyRegister(),
+              //AppRoutes.AVAILABLE: (_) => FoodsAvailable(),
+              //AppRoutes.ADD: (_) => MyAddPage(),
+            },
+            home: MyLoginPage(),
+          ),
+          width: w,
+          height: w * 16 / 9,
+        ),
       ),
     );
   }
