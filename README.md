@@ -23,19 +23,6 @@ G&R is a mobile app solution for everyone: farmers, merchants or the common popu
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 🍎🤝👨‍🌾🌱
 ### Short Description
 
@@ -43,10 +30,18 @@ G&R is a mobile app solution for everyone: farmers, merchants or the common popu
 
 
 ### Video
+
+
 ### App
 
 ### Architecture
 ![Architecture](/images/architecture.png)
+
+1) User access the mobile app
+2) Upload a photo to phone and add a food
+3) NodeRed receive the data and send it to private cloud
+4) The image is sent to a model created with Visual Recognition and Watson Studio to be classified into consumption, animal feed and fertilizer. Then, data will be stored in Cloud Object Storage. 
+5) The Machine Learning model will predict a potential interest in the food and send the notification to contribute to the match. 
 ### Technology
 
 ### Roadmap 
