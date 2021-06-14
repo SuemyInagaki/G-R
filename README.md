@@ -77,7 +77,7 @@ Why it matters?
 It is our social responsibility to take steps not only to check all types of waste, but also to protect natural resources. This can be done through innovative approaches and initiatives with a higher purpose.
 
 ### Video
-[![video](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+[![video](/images/capa.png)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
 
 
 ### App
