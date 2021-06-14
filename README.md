@@ -13,7 +13,7 @@ G&R is a mobile app solution for everyone: farmers, merchants or the common popu
 
 ### Contents:
 
-- [Short Description](###Short-Description)
+- [Short Description](###Short%20Description)
 - [Long Description](###Long-Description)
 - [Video](###Video)
 
