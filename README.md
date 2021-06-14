@@ -1,7 +1,5 @@
 # G&R 
-
-![Architecture](/images/logo.png)
-
+![Logo](/images/logo.png)
 
 ### Give and Receive 
 
@@ -36,7 +34,10 @@ G&R is a mobile app solution for everyone: farmers, merchants or the common popu
 
 
 ### App
-[<img src="/images/logo.png" width="50"/>](https://suemy-inagaki.github.io/#/)
+
+You can simulate using the app by clicking this link. As at first we developed it to be a mobile app, we've restricted the screen size to simulate how it works on a cell phone. Also, the app isn't complete yet, but it's a great way to experience and feel what it would be like if you were to use the app in the future.  
+
+[<img src="/images/logo.png" width="25"/>](https://suemy-inagaki.github.io/#/)
 
 ### Architecture
 ![Architecture](/images/architecture.png)
