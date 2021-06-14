@@ -71,7 +71,7 @@ And, as mentioned in the architecture section, we plan to use a machine learning
 
 ### Project Roadmap 
 
-
+![Roadmap](/images/roadmap.png)
 Run this app using the command: flutter run --no-sound-null-safety
 
 🍎🤝👨‍🌾🌱
