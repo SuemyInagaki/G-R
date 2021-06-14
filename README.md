@@ -46,7 +46,7 @@ G&R is a mobile app solution for everyone: farmers, merchants or the common popu
 ### App
 
 ### Architecture
-
+![Architecture](/images/architecture.png)
 ### Technology
 
 ### Roadmap 
