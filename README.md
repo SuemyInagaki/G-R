@@ -13,9 +13,13 @@ G&R is a mobile app solution for everyone: farmers, merchants or the common popu
 
 ### Contents:
 
-- [Short Description](#Short%20Description)
-- [Long Description](###Long-Description)
-- [Video](###Video)
+- [Short Description](#short%20description)
+- [Long Description](#long%20description)
+- [Video](#video)
+- [App](#app)
+- [Architecture](#architecture)
+- [IBM Cloud Services](#technology)
+- [Project Roadmap](#roadmap)
 
 
 
@@ -37,9 +41,9 @@ G&R is a mobile app solution for everyone: farmers, merchants or the common popu
 
 ### Long Description
 
-### App
 
 ### Video
+### App
 
 ### Architecture
 
