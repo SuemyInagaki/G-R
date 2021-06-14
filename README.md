@@ -14,8 +14,7 @@ G&R is a mobile app solution for everyone: farmers, merchants or the common popu
 
 ### Contents:
 
-- [Short Description](#short%20description)
-- [Long Description](#long%20description)
+- [Description](#short%20description)
 - [Video](#video)
 - [App](#app)
 - [Architecture](#architecture)
@@ -23,9 +22,12 @@ G&R is a mobile app solution for everyone: farmers, merchants or the common popu
 - [Project Roadmap](#roadmap)
 
 
-### Short Description
 
-### Long Description
+🍎🤝👨‍🌾🌱
+### Description
+
+#### Short Description
+#### Long Description
 
 
 ### Video
@@ -63,14 +65,12 @@ And, as mentioned in the architecture section, we plan to use a machine learning
 - [IBM Cloud Object Storage](https://www.ibm.com/br-pt/cloud/object-storage)
 - [Node-Red](https://nodered.org/)
 
-### Roadmap 
+### Project Roadmap 
 
 
 Run this app using the command: flutter run --no-sound-null-safety
 
 
 
-
-🍎🤝👨‍🌾🌱
 
 
