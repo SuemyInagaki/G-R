@@ -76,88 +76,9 @@ In order to scale the application, we thought about deploying it on the IBM Clou
 ### Project Roadmap 
 
 ![Roadmap](/images/roadmap.png)
-# G&R 
-![Logo](/images/logo.png)
-
-### Give and Receive 
-
-#### Contacts:</br>
-Danielli Cassiano: <daniellicass@ibm.com> </br>
-Juliana Morroni: <juliana.morroni@ibm.com> </br>
-Suemy Inagaki: <suemy.inagaki@ibm.com>
-
-
-## What is G&R?
-G&R is a mobile app solution for everyone: farmers, merchants or the common population. Its purpose is to serve as a tool that enables the match between food and someone who is in need of it, whether for their own consumption, for animal feed or for fertilizers. With this, we were able to reduce food waste and consequently the emission of carbon dioxide. Using state-of-the-art technology to classify food through images and to identify potential users interested in the food, so we will be able to reduce waste. In a single application, the user can donate, order food and see your waste and sustainability statistics.
-
-### Contents:
-
-- [Short Description](#Short-Description)
-- [Long Description](#Long-Description)
-- [Video](#video)
-- [App](#app)
-- [Architecture](#architecture)
-- [Technology](#technology)
-- [Timeline](#timeline)
-- [Project Roadmap](#Project-Roadmap)
-
-
-
-
-
-### Short Description
-### Long Description
-
-
-### Video
-
-
-### App
-
-You can simulate using the app by clicking the link below. As at first we developed it to be a mobile app, we've restricted the screen size to simulate how it works on a cell phone. The app isn't complete yet, but it's a great way to experience and feel what it would be like in the future.  
-
-You have two options to access the app: you can click on Sign In and create your own access credentials, or you can use the example that we have previously registered: 
-
-email: john@mail.com and password: 123@abc
-
-By logging in, you can now add food, order food, see your latest orders and see your statistics.
-
-[Click here to open the app](https://suemy-inagaki.github.io/#/) 
-
-### Architecture
-![Architecture](/images/architecture.png)
-
-1) User access the mobile app
-2) Upload a photo to phone and add a food
-3) NodeRed receive the data and send it to private cloud
-4) The image is sent to a model created with Visual Recognition and Watson Studio to be classified into consumption, animal feed and fertilizer. Then, data will be stored in Cloud Object Storage. 
-5) The Machine Learning model will predict a potential interest in the food and send the notification to contribute to the match. 
-### Technology
-
-We implemented the app in flutter as it is a very versatile language and allows using the same code for an iOS, Android and Web app. So if it is necessary, we can easily scale the application.
-We plan to use machine learning model in two ways:
--With Watson Visual Recognition and Watson Studio the application can classify images in consumption, animal food and fertilizer. Facilitating the user experience and improving the accuracy of the solution.
--With Watson Machine Learning the application can predict potential people interested in the food, enabling the increase of matches and the reduction of waste. 
-
-
-In order to scale the application, we thought about deploying it on the IBM Cloud and using Cloud Object Storage to store the data.
-
-- [Watson Studio](https://www.ibm.com/br-pt/cloud/watson-studio)
-- [Watson Visual Recognition](https://www.ibm.com/br-pt/cloud/watson-visual-recognition/pricing)
-- [Watson Machine Learning](https://www.ibm.com/br-pt/cloud/machine-learning)
-- [IBM Cloud Object Storage](https://www.ibm.com/br-pt/cloud/object-storage)
-- [Node-Red](https://nodered.org/)
-
-### Timeline
-![Logo](/images/timeline.png)
-
-### Project Roadmap 
-
-![Roadmap](/images/roadmap.png)
+Run this app using the command: flutter run --no-sound-null-safety
 
 🍎🤝👨‍🌾🌱
-
-
 
 
 
