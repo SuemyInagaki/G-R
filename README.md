@@ -23,16 +23,61 @@ G&R is a mobile app solution for everyone: farmers, merchants or the common popu
 - [Timeline](#timeline)
 - [Project Roadmap](#Project-Roadmap)
 
+### Team Project Name
 
+Give & Receive  
+
+
+### Project Theme
+
+Responsible production and green consumption
 
 
 
 ### Short Description
+
+Solve food waste problem and encourage conscious consumption.
+
 ### Long Description
 
+The Problem
+To Have Environmental responsibility is around applying innovation in your business.
+With that in mind, our purpose will be decreasing the waste, pollution and emission of gases as a result of improperly discarded food.
+
+
+Description 
+Our application aims to solve these problems in relation to Responsible production and green consumption, avoiding the possible accumulation of waste or gases emission by the same. Filling the gap between the farmers and donors, who wish to correctly dispose of these foods ,and the people who may require and use this food for some purpose, from self-consumption to fertilizer. This application will also provide statistics on how much food has been saved.
+
+
+Database:
+Some data that we count as important topics around this theme: 
+-30% of all food in the world is wasted - ONU
+-45% of all the fruits and vegetables that grow are missed - ONU
+-Food waste is responsible for 8% of the gases emissions that trigger the greenhouse effect - ONU
+
+
+What we are building:
+We implemented the app in flutter as it is a very versatile language and allows using the same code for an iOS, Android and Web app. So if it is necessary, we can easily scale the application.
+We plan to use machine learning model in two ways:
+-With Watson Visual Recognition and Watson Studio the application can classify images in consumption, animal food and fertilizer. Facilitating the user experience and improving the accuracy of the solution.
+-With Watson Machine Learning the application can predict potential people interested in the food, enabling the increase of matches and the reduction of waste. 
+
+
+In order to scale the application, we thought about deploying it on the IBM Cloud and using Cloud Object Storage to store the data.
+
+
+How to use the APP:
+You must first create your account to access our features.
+In the main menu, our app will present some information about issues related to waste, encouraging you to the sustainable movement.
+We have 2 possibilities, you can look for donated food at collection points near your region, assuming green consumption.
+On the other hand, you can also provide donations by registering your food in the app, may be the food left over from your harvest or considered unsuitable for sale, so will be reducing your waste levels.
+
+
+Why it matters?
+It is our social responsibility to take steps not only to check all types of waste, but also to protect natural resources. This can be done through innovative approaches and initiatives with a higher purpose.
 
 ### Video
-
+![video](https://ibm.box.com/shared/static/nfwyb44k9jryjq4s4kcj4p0oip5q1dy0.mp4)
 
 ### App
 
@@ -76,7 +121,14 @@ In order to scale the application, we thought about deploying it on the IBM Clou
 ### Project Roadmap 
 
 ![Roadmap](/images/roadmap.png)
-Run this app using the command: flutter run --no-sound-null-safety
+
+We have a beta of our application, the language used was Flutter. It is already usable, the user can access our features, being able to simulate all the actions, as a demo. A prototype with the design and functions was made too, so it could demonstrate where we plan to go. 
+
+
+As next steps, we plan to use the Watson Visual Recognition and Watson Studio to identify automatically the finality of the food by classifying images in consumption, animal food and fertilizer. Facilitating the user experience and improving the accuracy of the solution, without the user input. We also plan to use a map API as a filter to show the closest donations. 
+
+
+We hope in the future that we could identify potential interests, about the user, in available food. Making recommendations for next times. 
 
 🍎🤝👨‍🌾🌱
 
