@@ -1,4 +1,4 @@
-# G&R <img src="/images/logo.png" width="200"/>
+# G&R <img src="/images/logo.png" width="30"/>
 
 
 ### Give and Receive 
