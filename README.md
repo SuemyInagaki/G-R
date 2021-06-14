@@ -1,7 +1,7 @@
 # G&R 
-![Logo](/images/logo.png)
-
 ### Give and Receive 
+
+![Logo](/images/logo.png)
 
 #### Contacts:</br>
 Danielli Cassiano: <daniellicass@ibm.com> </br>
