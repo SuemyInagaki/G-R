@@ -37,6 +37,12 @@ G&R is a mobile app solution for everyone: farmers, merchants or the common popu
 
 You can simulate using the app by clicking the link below. As at first we developed it to be a mobile app, we've restricted the screen size to simulate how it works on a cell phone. Also, the app isn't complete yet, but it's a great way to experience and feel what it would be like if you were to use the app in the future.  
 
+You have two options to access the app: you can click on Sign In and create your own access credentials, or you can use the example that we have previously registered: 
+
+email: john@mail.com and password: 123@abc
+
+By logging in, you can now add food, order food, see your latest orders and see your stats.
+
 [Click here to open the app](https://suemy-inagaki.github.io/#/) 
 
 ### Architecture
