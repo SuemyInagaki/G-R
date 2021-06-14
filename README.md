@@ -58,7 +58,7 @@ By logging in, you can now add food, order food, see your latest orders and see 
 
 We implemented the app in flutter as it is a very versatile language and allows using the same code for an iOS, Android and Web app. That way, when we need to scale the application, we could do this easily.
 
-And, as mentioned in the architecture section, we plan to use a machine learning model created with Watson Visual Recognition and Watson Studio to classify images and a machine learning model to predict potential people interested in the food, enabling the increase of matches and the reduction of waste. In order to scale the application, we thought about deploying it on the Ibm Cloud and using Cloud Object Storage to store the data.
+And, as mentioned in the architecture section, we plan to use a machine learning model created with Watson Visual Recognition and Watson Studio to classify images and another Machine Learning model to predict potential people interested in the food, enabling the increase of matches and the reduction of waste. In order to scale the application, we thought about deploying it on the Ibm Cloud and using Cloud Object Storage to store the data.
 
 - [Watson Studio](https://www.ibm.com/br-pt/cloud/watson-studio)
 - [Watson Visual Recognition](https://www.ibm.com/br-pt/cloud/watson-visual-recognition/pricing)
