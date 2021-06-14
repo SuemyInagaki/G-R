@@ -62,7 +62,6 @@ And, as mentioned in the architecture section, we plan to use a machine learning
 ### Roadmap 
 
 
-Run this app using the command: flutter run --no-sound-null-safety
 
 
 
