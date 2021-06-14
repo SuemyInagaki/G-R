@@ -15,7 +15,7 @@ void main() {
 
 // ignore: must_be_immutable
 class MyApp extends StatelessWidget {
-  double w = 500;
+  double w = 400;
   @override
   Widget build(BuildContext context) {
     return MultiProvider(

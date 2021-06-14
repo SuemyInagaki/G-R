@@ -53,14 +53,12 @@ class _FoodsAvailableState extends State<FoodsAvailable> {
         ),
         backgroundColor: Colors.white,
       ),
-      body: SingleChildScrollView(
-        child: ListView.builder(
-          scrollDirection: Axis.vertical,
-          shrinkWrap: true,
-          padding: EdgeInsets.only(top: 10.0),
-          itemCount: _foodList.count,
-          itemBuilder: buildItem,
-        ),
+      body: ListView.builder(
+        scrollDirection: Axis.vertical,
+        shrinkWrap: true,
+        padding: EdgeInsets.only(top: 10.0),
+        itemCount: _foodList.count,
+        itemBuilder: buildItem,
       ),
     );
   }

@@ -122,7 +122,7 @@ class _MyRegister extends State<MyRegister> {
                   child: TextFormField(
                     onSaved: (value) => _formData['email'] = value,
                     obscureText: false,
-                    keyboardType: TextInputType.number,
+                    keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(
