@@ -6,7 +6,6 @@ import 'package:c4c/views/request.dart';
 import 'package:c4c/models/food.dart';
 import 'package:provider/provider.dart';
 import 'package:c4c/provider/foods.dart';
-import 'package:c4c/components/documents.dart';
 
 class FoodPage extends StatefulWidget {
   late final Food foodData;

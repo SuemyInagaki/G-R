@@ -79,7 +79,6 @@ class _MyStatistics extends State<MyStatistics> {
               Container(
                 width: 200,
                 child: Card(
-                  //margin: EdgeInsets.symmetric(horizontal: 50.0, vertical: 8.0),
                   clipBehavior: Clip.antiAlias,
                   color: MyColors.myWhite,
                   elevation: 8.0,
@@ -113,7 +112,6 @@ class _MyStatistics extends State<MyStatistics> {
               Container(
                 width: 200,
                 child: Card(
-                  //margin: EdgeInsets.symmetric(horizontal: 50.0, vertical: 8.0),
                   clipBehavior: Clip.antiAlias,
                   color: MyColors.myWhite,
                   elevation: 8.0,

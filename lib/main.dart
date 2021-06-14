@@ -13,8 +13,8 @@ void main() {
   runApp(MyApp());
 }
 
+// ignore: must_be_immutable
 class MyApp extends StatelessWidget {
-  bool _isAuth = false;
   double w = 500;
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,6 @@ class MyApp extends StatelessWidget {
               AppRoutes.REGISTER: (_) => MyRegister(),
             },
             home: MySplash(),
-            //home: MyLoginPage(),
           ),
           width: w,
           height: w * 16 / 9,

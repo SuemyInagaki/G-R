@@ -38,43 +38,36 @@ class _MyHome extends State<MyHome> {
         Image(
           image: AssetImage('images/image1.png'),
           width: double.infinity,
-          //height: 310,
           fit: BoxFit.cover,
         ),
         Image(
           image: AssetImage('images/image2.png'),
           width: double.infinity,
-          //height: 310,
           fit: BoxFit.cover,
         ),
         Image(
           image: AssetImage('images/image3.png'),
           width: double.infinity,
-          //height: 310,
           fit: BoxFit.cover,
         ),
         Image(
           image: AssetImage('images/image4.png'),
           width: double.infinity,
-          //height: 310,
           fit: BoxFit.cover,
         ),
         Image(
           image: AssetImage('images/image5.png'),
           width: double.infinity,
-          //height: 310,
           fit: BoxFit.cover,
         ),
         Image(
           image: AssetImage('images/image6.png'),
           width: double.infinity,
-          //height: 310,
           fit: BoxFit.cover,
         ),
         Image(
           image: AssetImage('images/image7.png'),
           width: double.infinity,
-          //height: 310,
           fit: BoxFit.cover,
         ),
       ],
@@ -101,10 +94,6 @@ class _MyHome extends State<MyHome> {
           "According to Food & Agriculture Organizaton of the United Nations (FAO) from 2013, food waste is the third highest emitter of GHG emissions.",
           textAlign: TextAlign.justify,
         ),
-        // Text(
-        //   "",
-        //   textAlign: TextAlign.justify,
-        // ),
       ],
       options: CarouselOptions(
         autoPlay: true,
@@ -123,12 +112,10 @@ class _MyHome extends State<MyHome> {
           toolbarHeight: 70,
           title: Text(
             'Give and Receive',
-            //textAlign: TextAlign.end,
             style: TextStyle(
               fontSize: 34,
               color: MyColors.myRed,
               fontWeight: FontWeight.w900,
-              //fontFamily: ,
             ),
           ),
           iconTheme: IconThemeData(color: MyColors.myRed)),
@@ -239,7 +226,6 @@ class _MyHome extends State<MyHome> {
   Widget _createDrawer(BuildContext context) {
     return Drawer(
       child: ListView(
-        // Important: Remove any padding from the ListView.
         padding: EdgeInsets.zero,
         children: <Widget>[
           DrawerHeader(

@@ -14,8 +14,7 @@ class _MySplash extends State<MySplash> {
       body: SplashScreen(
         seconds: 2,
         navigateAfterSeconds: MyLoginPage(),
-        //loaderColor: Colors.transparent,
-        image: new Image.network('https://i.imgur.com/TyCSG9A.png')
+        imageBackground: AssetImage('images/splash.png'),
       ),
     );
   }

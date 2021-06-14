@@ -34,7 +34,6 @@ class RequestsProvider with ChangeNotifier {
     if (request == null) {
       return;
     }
-    //Só adiciono se o usuário não existir
     if (request.id != null &&
         request.id.trim().isNotEmpty &&
         !_items.containsKey(request.id)) {

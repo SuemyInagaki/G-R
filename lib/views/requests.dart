@@ -1,11 +1,7 @@
-//import 'dart:html';
-
 import 'package:c4c/models/user.dart';
 import 'package:flutter/material.dart';
-import 'package:c4c/routes/app_route.dart';
 import 'package:provider/provider.dart';
 import 'package:c4c/provider/requests.dart' as req;
-//import 'package:c4c/data/dummy_foods.dart';
 import 'dart:ui';
 
 class MyRequests extends StatefulWidget {
@@ -308,42 +304,3 @@ class _MyRequests extends State<MyRequests> {
     );
   }
 }
-
-// final List _myRequests = [
-//   {
-//     "date": DateTime.now(),
-//     "deadline": DateTime(2021, 9, 12),
-//     "type": "Fruit",
-//     "food": "Banana",
-//     "quantity": 2,
-//     "distance": "20 km",
-//     "finality": "Human",
-//     "adress": "Rua jaragua 20",
-//     "name": "Zé bonitinho",
-//     "contact": "123456789",
-//   },
-//   {
-//     "date": DateTime(2021, 9, 6),
-//     "deadline": DateTime(2021, 9, 12),
-//     "type": "Fruit",
-//     "food": "Mango",
-//     "quantity": 3,
-//     "distance": "10 km",
-//     "finality": "Animal",
-//     "adress": "Rua mantiqueira 10",
-//     "name": "Tiririca",
-//     "contact": "987654321",
-//   },
-//   {
-//     "date": DateTime.now(),
-//     "deadline": DateTime(2021, 6, 20),
-//     "type": "Vegetable",
-//     "food": "Potato",
-//     "quantity": 1,
-//     "distance": "2 km",
-//     "finality": "Fertilizer",
-//     "adress": "Rua monteiro lobato 34",
-//     "name": "Charlie Brown",
-//     "contact": "123459876",
-//   }
-// ];

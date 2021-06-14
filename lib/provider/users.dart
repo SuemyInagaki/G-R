@@ -23,7 +23,7 @@ class Users with ChangeNotifier {
     if (user == null) {
       return;
     }
-    //Só adiciono se o usuário não existir
+
     if (user.id != null &&
         user.id.trim().isNotEmpty &&
         !_items.containsKey(user.id)) {

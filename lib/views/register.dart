@@ -8,12 +8,9 @@ import 'package:c4c/provider/users.dart';
 import 'package:c4c/views/home.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 
 class MyRegister extends StatefulWidget {
-  //MyRegister({Key? key, this.title = 'Register'}) : super(key: key);
-  //final String title;
   @override
   _MyRegister createState() => _MyRegister();
 }

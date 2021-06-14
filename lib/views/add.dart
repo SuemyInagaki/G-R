@@ -2,18 +2,11 @@ import 'package:c4c/components/colors.dart';
 import 'package:c4c/models/user.dart';
 import 'package:c4c/views/home.dart';
 import 'package:flutter/material.dart';
-import 'package:c4c/routes/app_route.dart';
 import 'package:c4c/provider/foods.dart';
 import 'package:c4c/models/food.dart';
 import 'package:provider/provider.dart';
-import 'package:path/path.dart';
-import 'package:async/async.dart';
-import 'dart:io';
-import 'package:http/http.dart' as http;
 
 class MyAddPage extends StatefulWidget {
-  //MyAddPage({Key? key, this.title = 'Register'}) : super(key: key);
-  //final String title;
   late final User _user;
   MyAddPage(this._user);
 
@@ -141,7 +134,6 @@ class _MyAddPage extends State<MyAddPage> {
                       border: UnderlineInputBorder(),
                       labelText: 'Finality',
                     ),
-                    //controller: foodController,
                     validator: (value) {
                       if (value!.isEmpty) {
                         return "Finality required";
@@ -153,7 +145,6 @@ class _MyAddPage extends State<MyAddPage> {
                 ),
                 Container(
                   padding: EdgeInsets.fromLTRB(25.0, 1.0, 25.0, 10.0),
-                  //margin: const EdgeInsets.all(10.0),
                   child: InputDatePickerFormField(
                     fieldLabelText: "Expire date",
                     firstDate: DateTime(2019),
@@ -168,7 +159,6 @@ class _MyAddPage extends State<MyAddPage> {
                 ),
                 Container(
                   padding: EdgeInsets.fromLTRB(25.0, 1.0, 25.0, 10.0),
-                  //margin: const EdgeInsets.all(10.0),
                   child: TextFormField(
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
