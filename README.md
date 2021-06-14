@@ -34,7 +34,7 @@ G&R is a mobile app solution for everyone: farmers, merchants or the common popu
 
 
 ### App
-[<img src="/images/logo.png" width="25"/>](https://suemy-inagaki.github.io/#/)
+[<img src="/images/logo.png" width="50"/>](https://suemy-inagaki.github.io/#/)
 
 ### Architecture
 ![Architecture](/images/architecture.png)
