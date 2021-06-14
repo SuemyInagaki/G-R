@@ -1,5 +1,6 @@
-# G&R <img src="/images/logo.png" width="50"/>
+# G&R 
 
+<img src="/images/logo.png" width="300"/>
 
 ### Give and Receive 
 
