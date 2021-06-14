@@ -37,7 +37,7 @@ G&R is a mobile app solution for everyone: farmers, merchants or the common popu
 
 You can simulate using the app by clicking the link below. As at first we developed it to be a mobile app, we've restricted the screen size to simulate how it works on a cell phone. Also, the app isn't complete yet, but it's a great way to experience and feel what it would be like if you were to use the app in the future.  
 
-[Click Here](https://suemy-inagaki.github.io/#/) 
+[Click here to open the app](https://suemy-inagaki.github.io/#/) 
 
 ### Architecture
 ![Architecture](/images/architecture.png)
