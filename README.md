@@ -24,7 +24,7 @@ G&R is a mobile app solution for everyone: farmers, merchants or the common popu
 
 
 
-🍎🤝👨‍🌾🌱
+
 ### Short Description
 
 ### Long Description
@@ -60,7 +60,7 @@ We implemented the app in flutter as it is a very versatile language and allows 
 And, as mentioned in the architecture section, we plan to use a machine learning model created with Watson Visual Recognition and Watson Studio to classify images and a machine learning model to predict potential people interested in the food, enabling the increase of matches and the reduction of waste. In order to scale the application, we thought about deploying it on the Ibm Cloud and using Cloud Object Storage to store the data.
 
 ### Roadmap 
-
+🍎🤝👨‍🌾🌱
 
 
 
