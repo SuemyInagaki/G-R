@@ -14,7 +14,8 @@ G&R is a mobile app solution for everyone: farmers, merchants or the common popu
 
 ### Contents:
 
-- [Description](#short%20description)
+- [Short Description](#Short-Description)
+- [Long Description](#Long-Description)
 - [Video](#video)
 - [App](#app)
 - [Architecture](#architecture)
@@ -23,11 +24,10 @@ G&R is a mobile app solution for everyone: farmers, merchants or the common popu
 
 
 
-🍎🤝👨‍🌾🌱
-### Description
 
-#### Short Description
-#### Long Description
+
+### Short Description
+### Long Description
 
 
 ### Video
@@ -70,7 +70,7 @@ And, as mentioned in the architecture section, we plan to use a machine learning
 
 Run this app using the command: flutter run --no-sound-null-safety
 
-
+🍎🤝👨‍🌾🌱
 
 
 
