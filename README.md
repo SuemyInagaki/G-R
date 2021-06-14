@@ -1,4 +1,5 @@
-# G&R
+# G&R 
+![Architecture](/images/logo.png)
 
 ### Give and Receive 
 
