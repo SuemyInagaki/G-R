@@ -20,6 +20,7 @@ G&R is a mobile app solution for everyone: farmers, merchants or the common popu
 - [App](#app)
 - [Architecture](#architecture)
 - [Technology](#technology)
+- [Timeline](#timeline)
 - [Project Roadmap](#Project-Roadmap)
 
 
@@ -65,9 +66,12 @@ And, as mentioned in the architecture section, we plan to use a machine learning
 - [IBM Cloud Object Storage](https://www.ibm.com/br-pt/cloud/object-storage)
 - [Node-Red](https://nodered.org/)
 
+### Timeline
+![Logo](/images/timeline.png)
+
 ### Project Roadmap 
 
-
+![Roadmap](/images/roadmap.png)
 Run this app using the command: flutter run --no-sound-null-safety
 
 🍎🤝👨‍🌾🌱
