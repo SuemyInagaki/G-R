@@ -1,5 +1,5 @@
 # G&R 
-![Architecture](/images/logo.png)
+[<img src="/images/logo.png" width="100"/>]
 
 ### Give and Receive 
 
