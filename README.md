@@ -19,7 +19,7 @@ G&R is a mobile app solution for everyone: farmers, merchants or the common popu
 - [App](#app)
 - [Architecture](#architecture)
 - [Technology](#technology)
-- [Project Roadmap](#roadmap)
+- [Project Roadmap](#Project-Roadmap)
 
 
 
