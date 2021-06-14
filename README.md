@@ -18,6 +18,7 @@ G&R is a mobile app solution for everyone: farmers, merchants or the common popu
 - [Long Description](#Long-Description)
 - [Video](#video)
 - [App](#app)
+- [Screens Prototype](#Screens-Prototype)
 - [Architecture](#architecture)
 - [Technology](#technology)
 - [Timeline](#timeline)
@@ -91,6 +92,9 @@ email: john@mail.com and password: 123@abc
 By logging in, you can now add food, order food, see your latest orders and see your statistics.
 
 [Click here to open the app](https://suemy-inagaki.github.io/#/) 
+
+### Screens Prototype
+
 
 ### Architecture
 ![Architecture](/images/architecture.png)
