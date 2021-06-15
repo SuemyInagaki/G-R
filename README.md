@@ -132,7 +132,7 @@ In order to scale the application, we thought about deploying it on the IBM Clou
 
 ### Project Roadmap 
 ![Roadmap](/images/roadmap-n.png)
-![Roadmap](/images/roadmap.png)
+![Roadmap](/images/next.png)
 
 We have a beta of our application, the language used was Flutter. It is already usable, the user can access our features, being able to simulate all the actions, as a demo. A prototype with the design and functions was made too, so it could demonstrate where we plan to go. 
 
@@ -143,4 +143,6 @@ As next steps, we plan to use the Watson Visual Recognition and Watson Studio to
 We hope in the future that we could identify potential interests, about the user, in available food. Making recommendations for next times. 
 
 🍎🤝👨‍🌾🌱
+
+
 
