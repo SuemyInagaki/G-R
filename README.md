@@ -41,23 +41,23 @@ Solve food waste problem and encourage conscious consumption.
 
 ### Long Description
 
-The Problem
+##### The Problem
 To Have Environmental responsibility is around applying innovation in your business.
 With that in mind, our purpose will be decreasing the waste, pollution and emission of gases as a result of improperly discarded food.
 
 
-Description 
+##### Description 
 Our application aims to solve these problems in relation to Responsible production and green consumption, avoiding the possible accumulation of waste or gases emission by the same. Filling the gap between the farmers and donors, who wish to correctly dispose of these foods ,and the people who may require and use this food for some purpose, from self-consumption to fertilizer. This application will also provide statistics on how much food has been saved.
 
 
-Database:
+##### Database
 Some data that we count as important topics around this theme: 
 -30% of all food in the world is wasted - ONU
 -45% of all the fruits and vegetables that grow are missed - ONU
 -Food waste is responsible for 8% of the gases emissions that trigger the greenhouse effect - ONU
 
 
-What we are building:
+##### What we are building
 We implemented the app in flutter as it is a very versatile language and allows using the same code for an iOS, Android and Web app. So if it is necessary, we can easily scale the application.
 We plan to use machine learning model in two ways:
 -With Watson Visual Recognition and Watson Studio the application can classify images in consumption, animal food and fertilizer. Facilitating the user experience and improving the accuracy of the solution.
@@ -67,14 +67,14 @@ We plan to use machine learning model in two ways:
 In order to scale the application, we thought about deploying it on the IBM Cloud and using Cloud Object Storage to store the data.
 
 
-How to use the APP:
+##### How to use the APP
 You must first create your account to access our features.
 In the main menu, our app will present some information about issues related to waste, encouraging you to the sustainable movement.
 We have 2 possibilities, you can look for donated food at collection points near your region, assuming green consumption.
 On the other hand, you can also provide donations by registering your food in the app, may be the food left over from your harvest or considered unsuitable for sale, so will be reducing your waste levels.
 
 
-Why it matters?
+##### Why it matters
 It is our social responsibility to take steps not only to check all types of waste, but also to protect natural resources. This can be done through innovative approaches and initiatives with a higher purpose.
 
 ### Video
@@ -94,6 +94,9 @@ By logging in, you can now add food, order food, see your latest orders and see 
 [Click here to open the app](https://suemy-inagaki.github.io/#/) 
 
 ### Screens Prototype
+
+The images below show the prototypes of the next screens to be implemented. 
+
 ![screens1](/images/telas5.png)
 ![screens2](/images/telas2.png)
 ![screens3](/images/telas3.png)
