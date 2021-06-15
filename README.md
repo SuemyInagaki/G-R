@@ -78,7 +78,7 @@ On the other hand, you can also provide donations by registering your food in th
 It is our social responsibility to take steps not only to check all types of waste, but also to protect natural resources. This can be done through innovative approaches and initiatives with a higher purpose.
 
 ### Video
-[![video](/images/capa.png)](https://ibm.box.com/s/nfwyb44k9jryjq4s4kcj4p0oip5q1dy0)
+[![video](/images/video.png)](https://ibm.box.com/s/nfwyb44k9jryjq4s4kcj4p0oip5q1dy0)
 
 
 ### App
