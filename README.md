@@ -18,6 +18,7 @@ G&R is a mobile app solution for everyone: farmers, merchants or the common popu
 - [Long Description](#Long-Description)
 - [Video](#video)
 - [App](#app)
+- [Screens Prototype](#Screens-Prototype)
 - [Architecture](#architecture)
 - [Technology](#technology)
 - [Timeline](#timeline)
@@ -77,7 +78,7 @@ Why it matters?
 It is our social responsibility to take steps not only to check all types of waste, but also to protect natural resources. This can be done through innovative approaches and initiatives with a higher purpose.
 
 ### Video
-[![video](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+[![video](/images/capa.png)](https://ibm.box.com/s/nfwyb44k9jryjq4s4kcj4p0oip5q1dy0)
 
 
 ### App
@@ -91,6 +92,9 @@ email: john@mail.com and password: 123@abc
 By logging in, you can now add food, order food, see your latest orders and see your statistics.
 
 [Click here to open the app](https://suemy-inagaki.github.io/#/) 
+
+### Screens Prototype
+
 
 ### Architecture
 ![Architecture](/images/architecture.png)
