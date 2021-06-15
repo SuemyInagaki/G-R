@@ -94,6 +94,10 @@ By logging in, you can now add food, order food, see your latest orders and see 
 [Click here to open the app](https://suemy-inagaki.github.io/#/) 
 
 ### Screens Prototype
+![screens1](/images/telas1.png)
+![screens2](/images/telas2.png)
+![screens3](/images/telas3.png)
+
 
 
 ### Architecture
