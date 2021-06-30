@@ -1,4 +1,6 @@
 import 'package:c4c/generated/l10n.dart';
+import 'package:c4c/models/user.dart';
+import 'package:c4c/views/foodpage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -9,10 +11,14 @@ import 'package:c4c/provider/foods.dart' as food;
 
 class MapPage extends StatefulWidget {
   @override
-  _MapPage createState() => _MapPage();
+  late final User user;
+  MapPage(this.user);
+  _MapPage createState() => _MapPage(this.user);
 }
 
 class _MapPage extends State<MapPage> {
+  late final User _user;
+  _MapPage(this._user);
   late GoogleMapController mapController;
   Set<Marker> markers = new Set<Marker>();
   final TextEditingController _controller = new TextEditingController();
@@ -59,15 +65,27 @@ class _MapPage extends State<MapPage> {
             title: _foodList.byIndex(i).name,
             snippet: _foodList.byIndex(i).finality,
           ),
+          onTap: () {
+            final _foodData = _foodList.byIndex(i);
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => FoodPage(_foodData, _user, i)));
+          },
         );
-        setState(() {
-          this.markers.add(marker);
-        });
+        if (mounted) {
+          setState(() {
+            this.markers.add(marker);
+          });
+        }
       }
     }
 
-    _createMarkers();
-    print(markers.length);
+    if (mounted) {
+      _createMarkers();
+      print(markers.length);
+    }
+
     return SingleChildScrollView(
       child: Column(
         children: [

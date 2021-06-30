@@ -190,7 +190,7 @@ class _FoodsAvailableState extends State<FoodsAvailable> {
         body: TabBarView(
           children: [
             listViewBuilder(),
-            MapPage(),
+            MapPage(_user),
           ],
         ),
       ),
