@@ -1,3 +1,4 @@
+import 'package:c4c/generated/l10n.dart';
 import 'package:c4c/models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:c4c/routes/app_route.dart';
@@ -68,15 +69,15 @@ class _MyLoginPage extends State<MyLoginPage> {
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       border: UnderlineInputBorder(),
-                      labelText: 'Email',
+                      labelText: S.of(context).mail,
                     ),
                     controller: emailController,
                     validator: (value) {
                       if (value != null) {
                         if (value.isEmpty) {
-                          return "Email required";
+                          return S.of(context).emailReq;
                         } else if (!EmailValidator.validate(value)) {
-                          return "Invalid email";
+                          return S.of(context).emailInvalid;
                         }
                       }
                       return null;
@@ -89,13 +90,13 @@ class _MyLoginPage extends State<MyLoginPage> {
                     obscureText: true,
                     decoration: InputDecoration(
                       border: UnderlineInputBorder(),
-                      labelText: 'Password',
+                      labelText: S.of(context).password,
                     ),
                     controller: passwordController,
                     validator: (value) {
                       if (value != null) {
                         if (value.isEmpty) {
-                          return "Password required";
+                          return S.of(context).passwordReq;
                         }
                       }
                       return null;
@@ -121,7 +122,7 @@ class _MyLoginPage extends State<MyLoginPage> {
                               _auth();
                             else {
                               final snack = SnackBar(
-                                content: Text("Invalid email or password"),
+                                content: Text(S.of(context).mailOrPassword),
                                 action: SnackBarAction(
                                     label: "",
                                     textColor: Colors.white,
@@ -137,7 +138,7 @@ class _MyLoginPage extends State<MyLoginPage> {
                         }
                       },
                       child: Text(
-                        "Log in",
+                        S.of(context).login,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,
@@ -164,7 +165,7 @@ class _MyLoginPage extends State<MyLoginPage> {
                         );
                       },
                       child: Text(
-                        "Sign Up",
+                        S.of(context).signup,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,

@@ -1,3 +1,4 @@
+import 'package:c4c/generated/l10n.dart';
 import 'package:c4c/models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -46,7 +47,7 @@ class _MyRequests extends State<MyRequests> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Request Detail",
+                S.of(context).detail,
                 style: TextStyle(
                     color: Colors.grey[700],
                     fontSize: 27.0,
@@ -58,7 +59,7 @@ class _MyRequests extends State<MyRequests> {
               Row(
                 children: [
                   Text(
-                    "Date: ",
+                    S.of(context).date + ": ",
                     style: TextStyle(
                         color: Colors.grey[700],
                         fontSize: 22.0,
@@ -77,7 +78,7 @@ class _MyRequests extends State<MyRequests> {
               Row(
                 children: [
                   Text(
-                    "Time: ",
+                    S.of(context).time + ": ",
                     style: TextStyle(
                         color: Colors.grey[700],
                         fontSize: 22.0,
@@ -96,7 +97,7 @@ class _MyRequests extends State<MyRequests> {
               Row(
                 children: [
                   Text(
-                    "Quantity: ",
+                    S.of(context).quantity + ": ",
                     style: TextStyle(
                         color: Colors.grey[700],
                         fontSize: 22.0,
@@ -118,7 +119,7 @@ class _MyRequests extends State<MyRequests> {
                     child: Column(
                       children: [
                         Text(
-                          "Type",
+                          S.of(context).type,
                           style: TextStyle(
                               color: Colors.grey[700],
                               fontSize: 22.0,
@@ -139,7 +140,7 @@ class _MyRequests extends State<MyRequests> {
                     child: Column(
                       children: [
                         Text(
-                          "Name",
+                          S.of(context).nameFood,
                           style: TextStyle(
                               color: Colors.grey[700],
                               fontSize: 22.0,
@@ -160,7 +161,7 @@ class _MyRequests extends State<MyRequests> {
                     child: Column(
                       children: [
                         Text(
-                          "Finality",
+                          S.of(context).finality,
                           style: TextStyle(
                               color: Colors.grey[700],
                               fontSize: 22.0,
@@ -183,7 +184,7 @@ class _MyRequests extends State<MyRequests> {
               Row(
                 children: [
                   Text(
-                    "Withdrawal deadline: ",
+                    S.of(context).deadline + ": ",
                     style: TextStyle(
                         color: Colors.grey[700],
                         fontSize: 22.0,
@@ -202,7 +203,7 @@ class _MyRequests extends State<MyRequests> {
                 height: 10.0,
               ),
               Text(
-                "Pickup adress:",
+                S.of(context).pickup + ":",
                 style: TextStyle(
                     color: Colors.grey[700],
                     fontSize: 22.0,
@@ -227,7 +228,7 @@ class _MyRequests extends State<MyRequests> {
               Row(
                 children: [
                   Text(
-                    "Donor name: ",
+                    S.of(context).donorName + ": ",
                     style: TextStyle(
                         color: Colors.grey[700],
                         fontSize: 22.0,
@@ -246,7 +247,7 @@ class _MyRequests extends State<MyRequests> {
               Row(
                 children: [
                   Text(
-                    "Donor phone: ",
+                    S.of(context).donorContact + ": ",
                     style: TextStyle(
                         color: Colors.grey[700],
                         fontSize: 22.0,
@@ -263,7 +264,7 @@ class _MyRequests extends State<MyRequests> {
               ),
               SizedBox(height: 20),
               Text(
-                "Thank you, you are helping to reduce waste and encourage conscientious consumption!",
+                S.of(context).thankYou,
                 style: TextStyle(
                     color: Colors.grey[600],
                     fontSize: 20.0,
@@ -285,7 +286,7 @@ class _MyRequests extends State<MyRequests> {
 
     return Scaffold(
       appBar: AppBar(
-          title: Text("My requests"),
+          title: Text(S.of(context).requests),
           leading: IconButton(
             icon: Icon(Icons.arrow_back),
             onPressed: () {

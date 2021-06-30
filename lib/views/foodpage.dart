@@ -1,4 +1,5 @@
 import 'package:c4c/components/colors.dart';
+import 'package:c4c/generated/l10n.dart';
 import 'package:c4c/models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -42,7 +43,8 @@ class _FoodPage extends State<FoodPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Food detail", style: TextStyle(color: MyColors.myRed)),
+        title:
+            Text(S.of(context).detail, style: TextStyle(color: MyColors.myRed)),
         backgroundColor: MyColors.myWhite,
         leading: IconButton(
           onPressed: () {
@@ -105,7 +107,7 @@ class _FoodPage extends State<FoodPage> {
                           child: Column(
                             children: [
                               Text(
-                                "Type",
+                                S.of(context).type,
                                 style: TextStyle(
                                     color: Colors.grey[800],
                                     fontSize: 22.0,
@@ -126,7 +128,7 @@ class _FoodPage extends State<FoodPage> {
                           child: Column(
                             children: [
                               Text(
-                                "Name",
+                                S.of(context).nameFood,
                                 style: TextStyle(
                                     color: Colors.grey[800],
                                     fontSize: 22.0,
@@ -147,7 +149,7 @@ class _FoodPage extends State<FoodPage> {
                           child: Column(
                             children: [
                               Text(
-                                "Finality",
+                                S.of(context).finality,
                                 style: TextStyle(
                                     color: Colors.grey[800],
                                     fontSize: 22.0,
@@ -273,7 +275,7 @@ class _FoodPage extends State<FoodPage> {
                             }
                           },
                           child: Text(
-                            "Request",
+                            S.of(context).request,
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Colors.white,

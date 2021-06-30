@@ -1,4 +1,5 @@
 import 'package:c4c/components/colors.dart';
+import 'package:c4c/generated/l10n.dart';
 import 'package:c4c/models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:c4c/routes/app_route.dart';
@@ -43,7 +44,8 @@ class MyRequest extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
           backgroundColor: MyColors.myWhite,
-          title: Text("My request", style: TextStyle(color: MyColors.myRed)),
+          title: Text(S.of(context).myRequest,
+              style: TextStyle(color: MyColors.myRed)),
           leading: IconButton(
             color: MyColors.myRed,
             icon: Icon(Icons.arrow_back),
@@ -73,7 +75,7 @@ class MyRequest extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Request Detail",
+                        S.of(context).detail,
                         style: TextStyle(
                             color: Colors.grey[700],
                             fontSize: 27.0,
@@ -85,7 +87,7 @@ class MyRequest extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            "Date: ",
+                            S.of(context).date + ": ",
                             style: TextStyle(
                                 color: Colors.grey[700],
                                 fontSize: 22.0,
@@ -104,7 +106,7 @@ class MyRequest extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            "Time: ",
+                            S.of(context).time + ": ",
                             style: TextStyle(
                                 color: Colors.grey[700],
                                 fontSize: 22.0,
@@ -123,7 +125,7 @@ class MyRequest extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            "Quantity: ",
+                            S.of(context).quantity + ": ",
                             style: TextStyle(
                                 color: Colors.grey[700],
                                 fontSize: 22.0,
@@ -145,7 +147,7 @@ class MyRequest extends StatelessWidget {
                             child: Column(
                               children: [
                                 Text(
-                                  "Type",
+                                  S.of(context).type,
                                   style: TextStyle(
                                       color: Colors.grey[700],
                                       fontSize: 22.0,
@@ -166,7 +168,7 @@ class MyRequest extends StatelessWidget {
                             child: Column(
                               children: [
                                 Text(
-                                  "Name",
+                                  S.of(context).nameFood,
                                   style: TextStyle(
                                       color: Colors.grey[700],
                                       fontSize: 22.0,
@@ -187,7 +189,7 @@ class MyRequest extends StatelessWidget {
                             child: Column(
                               children: [
                                 Text(
-                                  "Finality",
+                                  S.of(context).finality,
                                   style: TextStyle(
                                       color: Colors.grey[700],
                                       fontSize: 22.0,
@@ -210,7 +212,7 @@ class MyRequest extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            "Withdrawal deadline: ",
+                            S.of(context).deadline + ": ",
                             style: TextStyle(
                                 color: Colors.grey[700],
                                 fontSize: 22.0,
@@ -229,35 +231,39 @@ class MyRequest extends StatelessWidget {
                         height: 10.0,
                       ),
                       Text(
-                        "Pickup address:",
+                        S.of(context).pickup + ":",
                         style: TextStyle(
                             color: Colors.grey[700],
                             fontSize: 22.0,
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        "Country: ${_foodData.donor.address.country}",
+                        S.of(context).country +
+                            ": ${_foodData.donor.address.country}",
                         style: TextStyle(
                             color: Colors.grey[600],
                             fontSize: 20.0,
                             fontWeight: FontWeight.w400),
                       ),
                       Text(
-                        "State: ${_foodData.donor.address.state}",
+                        S.of(context).state +
+                            ": ${_foodData.donor.address.state}",
                         style: TextStyle(
                             color: Colors.grey[600],
                             fontSize: 20.0,
                             fontWeight: FontWeight.w400),
                       ),
                       Text(
-                        "City: ${_foodData.donor.address.city}",
+                        S.of(context).city +
+                            ": ${_foodData.donor.address.city}",
                         style: TextStyle(
                             color: Colors.grey[600],
                             fontSize: 20.0,
                             fontWeight: FontWeight.w400),
                       ),
                       Text(
-                        "Address: ${_foodData.donor.address.address}",
+                        S.of(context).address +
+                            ": ${_foodData.donor.address.address}",
                         style: TextStyle(
                             color: Colors.grey[600],
                             fontSize: 20.0,
@@ -267,7 +273,7 @@ class MyRequest extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            "Donor name: ",
+                            S.of(context).donorName + ": ",
                             style: TextStyle(
                                 color: Colors.grey[700],
                                 fontSize: 22.0,
@@ -286,7 +292,7 @@ class MyRequest extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            "Donor contact: ",
+                            S.of(context).donorContact + ": ",
                             style: TextStyle(
                                 color: Colors.grey[700],
                                 fontSize: 22.0,
@@ -303,7 +309,7 @@ class MyRequest extends StatelessWidget {
                       ),
                       SizedBox(height: 20),
                       Text(
-                        "Thank you, you are helping to reduce waste and encourage conscientious consumption!",
+                        S.of(context).thankYou,
                         style: TextStyle(
                             color: Colors.grey[600],
                             fontSize: 20.0,

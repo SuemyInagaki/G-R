@@ -1,6 +1,7 @@
 //import 'dart:html';
 
 import 'package:c4c/components/colors.dart';
+import 'package:c4c/generated/l10n.dart';
 import 'package:c4c/views/add.dart';
 import 'package:c4c/views/available.dart';
 import 'package:flutter/material.dart';
@@ -83,15 +84,15 @@ class _MyHome extends State<MyHome> {
     instance2 = new CarouselSlider(
       items: [
         Text(
-          "1000 kg of food waste causes approximatelly the emission of 2500 kg of CO2",
+          S.of(context).m1000kg, //aqui
           textAlign: TextAlign.justify,
         ),
         Text(
-          "1.75 tons of waste per year",
+          S.of(context).m175,
           textAlign: TextAlign.justify,
         ),
         Text(
-          "According to Food & Agriculture Organizaton of the United Nations (FAO) from 2013, food waste is the third highest emitter of GHG emissions.",
+          S.of(context).according,
           textAlign: TextAlign.justify,
         ),
       ],
@@ -130,7 +131,7 @@ class _MyHome extends State<MyHome> {
         Container(
           padding: EdgeInsets.all(30),
           child: Text(
-            "It is our responsibility to take steps not only to check all types of waste, but also to protect natural resources.",
+            S.of(context).itIsOur,
             textAlign: TextAlign.justify,
           ),
           color: MyColors.myWhite,
@@ -147,7 +148,7 @@ class _MyHome extends State<MyHome> {
                 Container(
                   padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
                   child: Text(
-                    "We believe that the world moves according to the conscience of each one",
+                    S.of(context).weBelieve,
                     textAlign: TextAlign.justify,
                     style: TextStyle(
                       fontSize: 14,
@@ -169,7 +170,7 @@ class _MyHome extends State<MyHome> {
                                 builder: (context) => MyStatistics(user)));
                       },
                       child: Text(
-                        "My statistics",
+                        S.of(context).statistics,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,
@@ -267,7 +268,7 @@ class _MyHome extends State<MyHome> {
             ),
           ),
           ListTile(
-            title: Text('Available foods'),
+            title: Text(S.of(context).available),
             onTap: () {
               Navigator.pop(context);
               Navigator.push(
@@ -278,7 +279,7 @@ class _MyHome extends State<MyHome> {
             leading: Icon(Icons.store),
           ),
           ListTile(
-            title: Text('Add food'),
+            title: Text(S.of(context).add),
             onTap: () {
               Navigator.pop(context);
               Navigator.push(context,
@@ -287,7 +288,7 @@ class _MyHome extends State<MyHome> {
             leading: Icon(Icons.add_box),
           ),
           ListTile(
-            title: Text('My requests'),
+            title: Text(S.of(context).requests),
             onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => MyRequests(user)));
@@ -295,7 +296,7 @@ class _MyHome extends State<MyHome> {
             leading: Icon(Icons.receipt),
           ),
           ListTile(
-            title: Text('Settings'),
+            title: Text(S.of(context).settings),
             onTap: () {
               Navigator.pop(context);
             },

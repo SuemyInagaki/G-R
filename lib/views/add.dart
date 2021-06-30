@@ -1,9 +1,15 @@
+import 'dart:io';
+
 import 'package:c4c/components/colors.dart';
+import 'package:c4c/generated/l10n.dart';
 import 'package:c4c/models/user.dart';
 import 'package:c4c/views/home.dart';
 import 'package:flutter/material.dart';
 import 'package:c4c/provider/foods.dart';
 import 'package:c4c/models/food.dart';
+import 'package:flutter/services.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 
 class MyAddPage extends StatefulWidget {
@@ -34,6 +40,40 @@ class _MyAddPage extends State<MyAddPage> {
 
   Widget build(BuildContext context) {
     final Foods _foodList = Provider.of(context);
+    late File imagem = File('images/logo.png');
+    late Image logo = Image.asset('images/logo.png');
+    int temImagem = 0;
+
+    PickedFile? imagemTemporaria;
+
+    //type == 1: galeria
+    //type == 0: camera
+    void pegarImagem(int type) async {
+      final picker = ImagePicker();
+      imagemTemporaria = await picker.getImage(
+        source: type == 1 ? ImageSource.gallery : ImageSource.camera,
+        maxWidth: 200,
+        maxHeight: 200,
+        imageQuality: 50,
+      );
+      setState(() {
+        imagem = File(imagemTemporaria!.path);
+        temImagem = 1;
+      });
+    }
+
+    Widget carregaImagem() {
+      if (temImagem == 1) {
+        return Image.file(
+          imagem,
+          width: 200,
+          height: 200,
+          fit: BoxFit.cover,
+        );
+      } else {
+        return logo;
+      }
+    }
 
     return Scaffold(
       appBar: AppBar(
@@ -63,19 +103,25 @@ class _MyAddPage extends State<MyAddPage> {
                       padding: EdgeInsets.only(left: 30),
                     ),
                     Container(
-                      width: 300,
+                      width: 200,
                       height: 200,
-                      color: Colors.grey,
+                      child: ClipRect(
+                        child: carregaImagem(),
+                      ),
                     ),
                     Column(
                       children: [
                         IconButton(
                           icon: Icon(Icons.local_see),
-                          onPressed: () {},
+                          onPressed: () {
+                            pegarImagem(0);
+                          },
                         ),
                         IconButton(
                           icon: Icon(Icons.collections),
-                          onPressed: () {},
+                          onPressed: () {
+                            pegarImagem(1);
+                          },
                         ),
                       ],
                     ),
@@ -94,12 +140,12 @@ class _MyAddPage extends State<MyAddPage> {
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       border: UnderlineInputBorder(),
-                      labelText: 'Type',
+                      labelText: S.of(context).type,
                     ),
                     controller: typeController,
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "Type required";
+                        return S.of(context).typeReq;
                       }
                       _formData["type"] = value;
                       return null;
@@ -113,12 +159,12 @@ class _MyAddPage extends State<MyAddPage> {
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       border: UnderlineInputBorder(),
-                      labelText: 'Food',
+                      labelText: S.of(context).nameFood,
                     ),
                     controller: foodController,
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "Food required";
+                        return S.of(context).foodReq;
                       }
                       _formData["food"] = value;
                       return null;
@@ -132,11 +178,11 @@ class _MyAddPage extends State<MyAddPage> {
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       border: UnderlineInputBorder(),
-                      labelText: 'Finality',
+                      labelText: S.of(context).finality,
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "Finality required";
+                        return S.of(context).finalityReq;
                       }
                       _formData["finality"] = value;
                       return null;
@@ -146,7 +192,7 @@ class _MyAddPage extends State<MyAddPage> {
                 Container(
                   padding: EdgeInsets.fromLTRB(25.0, 1.0, 25.0, 10.0),
                   child: InputDatePickerFormField(
-                    fieldLabelText: "Expire date",
+                    fieldLabelText: S.of(context).deadline,
                     firstDate: DateTime(2019),
                     lastDate: DateTime(selectedDate.year, 12, 12),
                     initialDate: selectedDate,
@@ -163,12 +209,12 @@ class _MyAddPage extends State<MyAddPage> {
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                       border: UnderlineInputBorder(),
-                      labelText: 'Quantity (kg)',
+                      labelText: S.of(context).quantity + ' (kg)',
                     ),
                     controller: qtdController,
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "Quantity required";
+                        return S.of(context).quantityReq;
                       } else if (int.parse(value) >= 100) {
                         return "Max 99";
                       } else if (int.parse(value) < 1) {
@@ -211,7 +257,7 @@ class _MyAddPage extends State<MyAddPage> {
                                   builder: (context) => MyHome(_user)));
 
                           final snack = SnackBar(
-                            content: Text("Food added successfully!"),
+                            content: Text(S.of(context).addSuccess),
                             action: SnackBarAction(
                                 label: "",
                                 textColor: Colors.white,
@@ -224,7 +270,7 @@ class _MyAddPage extends State<MyAddPage> {
                         }
                       },
                       child: Text(
-                        "Add",
+                        S.of(context).addButton,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,

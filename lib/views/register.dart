@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:c4c/components/colors.dart';
+import 'package:c4c/generated/l10n.dart';
 import 'package:c4c/models/address.dart';
 import 'package:c4c/models/user.dart';
 import 'package:c4c/provider/users.dart';
@@ -78,12 +79,12 @@ class _MyRegister extends State<MyRegister> {
                           Radius.circular(40.0),
                         ),
                       ),
-                      labelText: 'Name',
+                      labelText: S.of(context).name,
                     ),
                     controller: nameController,
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "Name required";
+                        return S.of(context).nameReq;
                       } else if (value.trim().length < 5) {
                         return "Min. 5 characters";
                       }
@@ -105,12 +106,12 @@ class _MyRegister extends State<MyRegister> {
                           Radius.circular(40.0),
                         ),
                       ),
-                      labelText: 'Phone',
+                      labelText: S.of(context).phone,
                     ),
                     controller: telController,
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "Phone required";
+                        return S.of(context).phoneReq;
                       }
                       _formData['phone'] = value;
                       return null;
@@ -129,13 +130,13 @@ class _MyRegister extends State<MyRegister> {
                           Radius.circular(40.0),
                         ),
                       ),
-                      labelText: 'Mail',
+                      labelText: S.of(context).mail,
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "Email required";
+                        return S.of(context).mailReq;
                       } else if (!EmailValidator.validate(value)) {
-                        return "Email inválido";
+                        return S.of(context).mailInvalid;
                       }
                       _formData['mail'] = value;
                       return null;
@@ -152,13 +153,13 @@ class _MyRegister extends State<MyRegister> {
                           Radius.circular(40.0),
                         ),
                       ),
-                      labelText: 'Password',
+                      labelText: S.of(context).password,
                     ),
                     controller: passwordController1,
                     validator: (value) {
                       if (value != null) _senha = value;
                       if (value!.isEmpty) {
-                        return "Password required";
+                        return S.of(context).passwordReq;
                       }
 
                       return null;
@@ -175,14 +176,14 @@ class _MyRegister extends State<MyRegister> {
                           Radius.circular(40.0),
                         ),
                       ),
-                      labelText: 'Confirm password',
+                      labelText: S.of(context).confirm,
                     ),
                     controller: passwordController2,
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "Password required";
+                        return S.of(context).passwordReq;
                       } else if (_senha != value) {
-                        return "Passwords do not match";
+                        return S.of(context).passwordDont;
                       }
                       _formData['password'] = value;
                       return null;
@@ -199,12 +200,12 @@ class _MyRegister extends State<MyRegister> {
                           Radius.circular(40.0),
                         ),
                       ),
-                      labelText: 'Country',
+                      labelText: S.of(context).country,
                     ),
                     controller: addressController,
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "Country required";
+                        return S.of(context).countryReq;
                       }
                       _formData['country'] = value;
                       return null;
@@ -221,11 +222,11 @@ class _MyRegister extends State<MyRegister> {
                           Radius.circular(40.0),
                         ),
                       ),
-                      labelText: 'State',
+                      labelText: S.of(context).state,
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "State required";
+                        return S.of(context).stateReq;
                       }
                       _formData['state'] = value;
                       return null;
@@ -241,11 +242,11 @@ class _MyRegister extends State<MyRegister> {
                           Radius.circular(40.0),
                         ),
                       ),
-                      labelText: 'City',
+                      labelText: S.of(context).city,
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "City required";
+                        return S.of(context).cityReq;
                       }
                       _formData['city'] = value;
                       return null;
@@ -265,7 +266,7 @@ class _MyRegister extends State<MyRegister> {
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "Address required";
+                        return S.of(context).addressReq;
                       }
                       _formData['address'] = value;
                       return null;
@@ -281,11 +282,11 @@ class _MyRegister extends State<MyRegister> {
                           Radius.circular(40.0),
                         ),
                       ),
-                      labelText: 'Postal Code',
+                      labelText: S.of(context).cep,
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "Postal code required";
+                        return S.of(context).cepReq;
                       }
 
                       _formData['postal'] = value;
@@ -325,7 +326,7 @@ class _MyRegister extends State<MyRegister> {
                               Provider.of(context, listen: false);
                           users.put(user);
                           final snack = SnackBar(
-                            content: Text("Registration success!"),
+                            content: Text(S.of(context).registrationSuccess),
                             action: SnackBarAction(
                                 label: "",
                                 textColor: Colors.white,
@@ -344,7 +345,7 @@ class _MyRegister extends State<MyRegister> {
                         }
                       },
                       child: Text(
-                        "Sign Up",
+                        S.of(context).signup,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,
@@ -356,7 +357,7 @@ class _MyRegister extends State<MyRegister> {
                   ),
                 ),
                 Text(
-                  "Already an user?",
+                  S.of(context).already,
                   style: TextStyle(
                     color: Colors.grey,
                   ),
@@ -366,7 +367,7 @@ class _MyRegister extends State<MyRegister> {
                     Navigator.pop(context);
                   },
                   child: Text(
-                    "Sign in",
+                    S.of(context).login,
                     style: TextStyle(
                       color: MyColors.myRed,
                       fontWeight: FontWeight.bold,

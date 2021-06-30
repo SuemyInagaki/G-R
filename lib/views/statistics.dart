@@ -1,4 +1,5 @@
 import 'package:c4c/components/colors.dart';
+import 'package:c4c/generated/l10n.dart';
 import 'package:c4c/models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -62,7 +63,7 @@ class _MyStatistics extends State<MyStatistics> {
           ),
           Center(
             child: Text(
-              "My progress",
+              S.of(context).progress,
               style: TextStyle(
                 color: MyColors.myRed,
                 fontWeight: FontWeight.bold,
@@ -77,7 +78,7 @@ class _MyStatistics extends State<MyStatistics> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                width: 200,
+                width: 150,
                 child: Card(
                   clipBehavior: Clip.antiAlias,
                   color: MyColors.myWhite,
@@ -87,7 +88,7 @@ class _MyStatistics extends State<MyStatistics> {
                     child: Column(
                       children: [
                         Text(
-                          'Waste',
+                          S.of(context).waste,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
@@ -96,7 +97,7 @@ class _MyStatistics extends State<MyStatistics> {
                         SizedBox(
                           height: 10,
                         ),
-                        Text('Food: $_waste kg'),
+                        Text(S.of(context).food + ': $_waste kg'),
                         SizedBox(
                           height: 10,
                         ),
@@ -110,7 +111,7 @@ class _MyStatistics extends State<MyStatistics> {
                 padding: EdgeInsets.all(0),
               ),
               Container(
-                width: 200,
+                width: 150,
                 child: Card(
                   clipBehavior: Clip.antiAlias,
                   color: MyColors.myWhite,
@@ -120,7 +121,7 @@ class _MyStatistics extends State<MyStatistics> {
                     child: Column(
                       children: [
                         Text(
-                          'Economy',
+                          S.of(context).economy,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
@@ -129,7 +130,7 @@ class _MyStatistics extends State<MyStatistics> {
                         SizedBox(
                           height: 10,
                         ),
-                        Text('Food: $_economy kg'),
+                        Text(S.of(context).food + ': $_economy kg'),
                         SizedBox(
                           height: 10,
                         ),
