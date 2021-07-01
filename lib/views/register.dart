@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'dart:math';
 
 import 'package:c4c/components/colors.dart';
 import 'package:c4c/generated/l10n.dart';
@@ -10,6 +11,7 @@ import 'package:c4c/views/home.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:c4c/database/helper.dart' as h;
 
 class MyRegister extends StatefulWidget {
   @override
@@ -24,9 +26,7 @@ class _MyRegister extends State<MyRegister> {
   final TextEditingController addressController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
-  //Map<String, dynamic> _formData = {};
-
-  List _formList = [];
+  h.Helper helper = h.Helper();
   Map _formData = {};
 
   var _senha = "";
@@ -306,6 +306,24 @@ class _MyRegister extends State<MyRegister> {
                       onPressed: () {
                         bool isValid = _formKey.currentState!.validate();
                         if (isValid) {
+                          h.User u = h.User();
+                          h.Address a = h.Address();
+
+                          // a.country = _formData['country'];
+                          // a.city = _formData['city'];
+                          // a.state = _formData['state'];
+                          // a.address = _formData['address'];
+                          // a.postal = _formData['postal'];
+                          // a.id = 0;
+
+                          // u.name = _formData['name'];
+                          // u.phone = _formData['phone'];
+                          // u.email = _formData['email'];
+                          // u.password = _formData["password"];
+                          // u.id = 0;
+                          // u.addressID = a.id;
+                          // helper.saveAddress(a);
+                          // helper.saveUser(u);
                           User user = User(
                             id: '',
                             name: _formData['name'],
@@ -325,6 +343,13 @@ class _MyRegister extends State<MyRegister> {
                           final Users users =
                               Provider.of(context, listen: false);
                           users.put(user);
+
+                          // helper.getAllAddress().then((list) {
+                          //   print(list.length);
+                          // });
+                          helper.getAllUsers().then((list) {
+                            print(list.length);
+                          });
                           final snack = SnackBar(
                             content: Text(S.of(context).registrationSuccess),
                             action: SnackBarAction(

@@ -39,7 +39,8 @@ dependencies:
   google_maps_flutter:
   geocoder: ^0.2.1
   geolocator: ^6.2.1
-  
+  sqflite:
+  url_launcher:
   
 
 dev_dependencies:
