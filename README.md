@@ -68,7 +68,7 @@ In order to scale the application, we thought about deploying it on the IBM Clou
 
 
 #### How to use the APP
-You must first create your account to access our features.
+You must first create your account to access our features and all the informations about the proccess.
 In the main menu, our app will present some information about issues related to waste, encouraging you to the sustainable movement.
 We have 2 possibilities, you can look for donated food at collection points near your region, assuming green consumption.
 On the other hand, you can also provide donations by registering your food in the app, may be the food left over from your harvest or considered unsuitable for sale, so will be reducing your waste levels.
